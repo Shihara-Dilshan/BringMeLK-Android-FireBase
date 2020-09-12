@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "633318003390",
+    "firebase_url": "https://bringmelk-93e0d.firebaseio.com",
+    "project_id": "bringmelk-93e0d",
+    "storage_bucket": "bringmelk-93e0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633318003390:android:ee7e52eaa94cbb2da684ef",
+        "android_client_info": {
+          "package_name": "app.noobstack.bringme.bringmelk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633318003390-vprd2i1uhs6326rbv7tu39dujckdit9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5KnxEq2q-5_OazMQOfhRcxkaWzIJAF9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633318003390-vprd2i1uhs6326rbv7tu39dujckdit9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
