@@ -30,4 +30,11 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="logout">Logout</string>
     <string name="title_activity_admin_nev">AdminNevActivity</string>
+    <string name="title_activity_admin_dashboard">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_admin_home">MainActivity</string>
 </resources>

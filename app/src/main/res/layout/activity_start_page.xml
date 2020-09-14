@@ -4,59 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pngtree"
     android:orientation="vertical"
-    tools:context=".startPage"
-    android:background="@drawable/pngtree">
+    tools:context=".startPage">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_logo_desc"
-        android:src="@drawable/icons_shop"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BringMe.Lk"
-        android:textColor="#009688"
-        android:textSize="25sp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"/>
-
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="@string/login_email_hint"
-        android:id="@+id/emailField"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="40dp"
-        android:background="#FFFFFF" />
+        android:layout_height="wrap_content">
 
-  <EditText
-      android:id="@+id/editTextTextPassword2"
-      android:layout_width="match_parent"
-      android:layout_height="40dp"
-      android:ems="10"
-      android:hint="Passsword"
-      android:inputType="textPassword"
-      android:layout_marginLeft="40dp"
-      android:layout_marginRight="40dp"
-      android:layout_marginTop="40dp"
-      android:background="#FFFFFF"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-  <Button
-      android:id="@+id/loginBtn"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="Login"
-      android:textColor="#FFFFFF"
-      android:background="#009688"
-      android:layout_marginLeft="40dp"
-      android:layout_marginRight="40dp"
-      android:layout_marginTop="50dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:contentDescription="@string/app_logo_desc"
+                android:src="@drawable/icons_shop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="BringMe.Lk"
+                android:textColor="#009688"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/emailField"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="40dp"
+                android:background="#FFFFFF"
+                android:hint="@string/login_email_hint" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="40dp"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:hint="Passsword"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="40dp"
+                android:background="#009688"
+                android:text="Login"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:onClick="adminLogin"
+                android:text="Admin Login" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

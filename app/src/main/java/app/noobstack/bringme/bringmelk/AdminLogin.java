@@ -14,11 +14,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-public class startPage extends AppCompatActivity {
+public class AdminLogin extends AppCompatActivity {
 
     private Button button;
     private FirebaseAuth mAuth;
@@ -28,30 +25,23 @@ public class startPage extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(final Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_admin_login);
 
-        //hide the top title bar
-        try {
-            this.getSupportActionBar().hide();
-        } catch (NullPointerException e) {
-        }
-
-        setContentView(R.layout.activity_start_page);
-
-        emailField = findViewById(R.id.emailField);
-        passwordField = findViewById(R.id.editTextTextPassword2);
+        emailField = findViewById(R.id.adminEmailField);
+        passwordField = findViewById(R.id.editTextTextPasswordAdmin);
 
         mAuth = FirebaseAuth.getInstance();
 
 
-        button = findViewById(R.id.loginBtn);
+        button = findViewById(R.id.adminLoginBtn);
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(startPage.this, MainActivity.class));
+                    startActivity(new Intent(AdminLogin.this, AdminDashboard.class));
                 }
             }
         };
@@ -63,6 +53,7 @@ public class startPage extends AppCompatActivity {
             }
         });
     }
+
 
     @Override
     public void onStart() {
@@ -82,16 +73,11 @@ public class startPage extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (!task.isSuccessful()) {
-                    Toast.makeText(startPage.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminLogin.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
                 } else {
 
                 }
             }
         });
-    }
-
-    public void adminLogin(View view) {
-        Intent intent = new Intent(startPage.this, AdminLogin.class);
-        startActivity(intent);
     }
 }
