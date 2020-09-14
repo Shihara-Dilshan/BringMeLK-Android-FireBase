@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.noobstack.bringme.bringmelk" >
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icons_shop"
@@ -9,6 +11,14 @@
         android:roundIcon="@drawable/icons_shop"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name=".AdminNevActivity"
+            android:label="@string/title_activity_admin_nev"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
         <activity android:name=".startPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +29,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
