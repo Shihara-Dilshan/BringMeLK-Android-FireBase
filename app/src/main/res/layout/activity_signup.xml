@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pngtree"
-    android:orientation="vertical"
-    tools:context=".startPage">
+    tools:context=".SignupActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,18 +35,18 @@
                 android:textSize="25sp" />
 
             <EditText
-                android:id="@+id/emailField"
+                android:id="@+id/signupemailField"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="textEmailAddress"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/input_fields"
                 android:hint="@string/login_email_hint" />
 
             <EditText
-                android:id="@+id/editTextTextPassword2"
+                android:id="@+id/editSignupTextTextPassword2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
@@ -55,43 +54,35 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/input_fields"
                 android:ems="10"
-                android:hint="Passsword"
+                android:hint="Password"
                 android:inputType="textPassword" />
 
-            <Button
-                android:id="@+id/loginBtn"
+            <EditText
+                android:id="@+id/editTextTextConfirmPassword2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
-                android:background="@drawable/login_button"
-                android:text="Login"
-                android:textColor="#FFFFFF" />
+                android:background="@drawable/input_fields"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:inputType="textPassword" />
+
 
             <Button
-                android:id="@+id/signUpBtn"
+                android:id="@+id/signUpBtnAdd"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/signup_btn"
                 android:text="Sign Up"
-                android:textColor="#FFFFFF"
-                android:onClick="signUpPage"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:onClick="adminLogin"
-                android:text="Admin Login" />
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

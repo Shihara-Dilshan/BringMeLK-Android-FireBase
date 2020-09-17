@@ -11,12 +11,15 @@
         android:roundIcon="@drawable/icons_shop"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminDashboard"></activity>
+        <activity android:name=".SignupActivity" android:windowSoftInputMode="stateVisible|adjustPan"></activity>
+        <activity android:name=".AdminDashboard" />
         <activity android:name=".AdminLogin" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".startPage">
+        <activity
+            android:name=".startPage"
+            android:windowSoftInputMode="stateVisible|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

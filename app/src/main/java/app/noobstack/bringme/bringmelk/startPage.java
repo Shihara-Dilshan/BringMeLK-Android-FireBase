@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,6 +40,8 @@ public class startPage extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_start_page);
+
+        //this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         emailField = findViewById(R.id.emailField);
         passwordField = findViewById(R.id.editTextTextPassword2);
@@ -93,5 +97,9 @@ public class startPage extends AppCompatActivity {
     public void adminLogin(View view) {
         Intent intent = new Intent(startPage.this, AdminLogin.class);
         startActivity(intent);
+    }
+
+    public void signUpPage(View view) {
+        startActivity(new Intent(startPage.this, SignupActivity.class));
     }
 }
