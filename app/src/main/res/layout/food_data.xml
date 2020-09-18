@@ -81,7 +81,7 @@
                 android:textColor="#ffffff"
                 android:layout_height="40dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/food_item_button"
+                android:background="@drawable/view_button"
                 android:text="Buy" />
 
         </LinearLayout>

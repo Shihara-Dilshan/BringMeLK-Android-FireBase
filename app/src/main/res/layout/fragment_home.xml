@@ -47,6 +47,58 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Check out our social Media"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ic_fb"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/iconfinder_facebook_1696905"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ic_google"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/iconfinder_g_1696896"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ic_insta"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/iconfinder_instagram_1696894"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ic_tweater"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/iconfinder_twitter_1696895"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ic_whatsapp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/iconfinder_whatsapp_1696897"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 
