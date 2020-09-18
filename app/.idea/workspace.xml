@@ -31,9 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="Class" />
-        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -131,11 +131,12 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="576" y="204" width="353" height="498" key="#com.intellij.ide.util.MemberChooser" timestamp="1600089685925">
+    <state x="576" y="204" width="384" height="629" key="#com.intellij.ide.util.MemberChooser" timestamp="1600411485163">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="768" y="269" width="384" height="580" key="#com.intellij.ide.util.MemberChooser/0.31.1920.1049@0.31.1920.1049" timestamp="1600070886283" />
     <state x="576" y="204" width="353" height="498" key="#com.intellij.ide.util.MemberChooser/1440.321.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600089685925" />
+    <state x="576" y="204" width="384" height="629" key="#com.intellij.ide.util.MemberChooser/1440.383.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600411485163" />
     <state x="519" y="268" width="535" height="432" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1600081301557">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -145,12 +146,13 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="453" y="216" width="534" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1440.321.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600089730069" />
-    <state x="407" y="245" width="834" height="487" key="AndroidCreateResourceFileDialog" timestamp="1600338885283">
+    <state x="407" y="245" width="834" height="487" key="AndroidCreateResourceFileDialog" timestamp="1600410606492">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="543" y="316" width="834" height="487" key="AndroidCreateResourceFileDialog/0.31.1920.1049@0.31.1920.1049" timestamp="1600048034737" />
     <state x="407" y="245" key="AndroidCreateResourceFileDialog/1440.321.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600090335231" />
     <state x="407" y="245" width="834" height="487" key="AndroidCreateResourceFileDialog/1440.364.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600338885283" />
+    <state x="407" y="245" key="AndroidCreateResourceFileDialog/1440.383.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600410606492" />
     <state x="809" y="372" width="301" height="374" key="AndroidCreateXmlResourceDialog" timestamp="1600050257179">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
@@ -179,9 +181,10 @@
     <state width="1874" height="277" key="GridCell.Tab.0.right/0.31.1920.1049@0.31.1920.1049" timestamp="1600071817142" />
     <state width="1394" height="217" key="GridCell.Tab.0.right/1440.321.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600091600575" />
     <state width="1394" height="217" key="GridCell.Tab.0.right/1440.364.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600342401547" />
-    <state x="383" y="218" width="672" height="678" key="search.everywhere.popup" timestamp="1600086111641">
+    <state x="383" y="218" width="672" height="678" key="search.everywhere.popup" timestamp="1600409019871">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="383" y="218" width="672" height="678" key="search.everywhere.popup/1440.321.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600086111641" />
+    <state x="383" y="218" width="672" height="678" key="search.everywhere.popup/1440.383.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600409019871" />
   </component>
 </project>

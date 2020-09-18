@@ -13,7 +13,7 @@
         android:id="@+id/adminBottombar"
         app:menu="@menu/bottommenu"
         app:itemIconTint="#ffffff"
-        android:background="#388E3C">
+        android:background="#00796B">
 
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
