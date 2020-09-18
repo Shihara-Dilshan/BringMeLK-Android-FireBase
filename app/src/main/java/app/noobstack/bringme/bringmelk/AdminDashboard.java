@@ -11,14 +11,20 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments.DeliverMangement;
+import app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments.FoodMngFragment;
 import app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments.SearchFragment;
 import app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments.adminDashFragment;
+import app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments.paymentManagement;
 
 public class AdminDashboard extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private adminDashFragment admindashfragment;
     private SearchFragment searchFragment;
+    private DeliverMangement deliverMangement;
+    private FoodMngFragment foodMngFragment;
+    private paymentManagement payment_management;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,10 @@ public class AdminDashboard extends AppCompatActivity {
 
         admindashfragment = new adminDashFragment();
         searchFragment = new SearchFragment();
+        deliverMangement = new DeliverMangement();
+        foodMngFragment = new FoodMngFragment();
+        payment_management = new paymentManagement();
+
 
         navigateFragment(admindashfragment);
         //hide the top title bar
@@ -45,15 +55,15 @@ public class AdminDashboard extends AppCompatActivity {
                         return true;
                     case R.id.Search_ico:
                         navigateFragment(searchFragment);
-                        Toast.makeText(AdminDashboard.this, "search fragment clicked", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.Cart_ico:
-                        Toast.makeText(AdminDashboard.this, "cart fragment clicked", Toast.LENGTH_SHORT).show();
+                        navigateFragment(deliverMangement);
                         return true;
                     case R.id.Order_ico:
-                        Toast.makeText(AdminDashboard.this, "order fragment clicked", Toast.LENGTH_SHORT).show();
+                        navigateFragment(foodMngFragment);
+                        return true;
                     case R.id.Profile_ico:
-                        Toast.makeText(AdminDashboard.this, "profile fragment clicked", Toast.LENGTH_SHORT).show();
+                        navigateFragment(payment_management);
                         return true;
                 }
                 return false;
