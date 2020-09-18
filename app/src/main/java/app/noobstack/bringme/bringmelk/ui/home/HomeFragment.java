@@ -21,12 +21,15 @@ import com.squareup.picasso.Picasso;
 
 import app.noobstack.bringme.bringmelk.R;
 import app.noobstack.bringme.bringmelk.model.Data;
+import app.noobstack.bringme.bringmelk.model.Food;
 
 public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerViewCategory;
     private RecyclerView recyclerViewFood;
     private DatabaseReference CategoryDB;
+    private DatabaseReference FoodDB;
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -35,6 +38,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         CategoryDB = FirebaseDatabase.getInstance().getReference().child("categories");
+        FoodDB = FirebaseDatabase.getInstance().getReference().child("foods");
 
         recyclerViewCategory = root.findViewById(R.id.categoryRecycle);
 
@@ -71,6 +75,17 @@ public class HomeFragment extends Fragment {
 
         recyclerViewCategory.setAdapter(adapter1);
 
+        FirebaseRecyclerAdapter<Food,FoodViewHolder>adapter2=new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,R.layout.food_data, FoodViewHolder.class,FoodDB ) {
+            @Override
+            protected void populateViewHolder(FoodViewHolder foodViewHolder, Food food, int i) {
+                foodViewHolder.setTitle(food.getTitle());
+                foodViewHolder.setDescription(food.getDescription());
+                foodViewHolder.setImage(food.getImage());
+            }
+        };
+
+        recyclerViewFood.setAdapter(adapter2);
+
     }
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder{
@@ -103,6 +118,41 @@ public class HomeFragment extends Fragment {
                 @Override
                 public void onError(Exception e) {
                     Picasso.get().load(image).into(categoryImage);
+                }
+            });
+        }
+    }
+
+    public static class FoodViewHolder extends RecyclerView.ViewHolder{
+        View FoodView;
+
+        public FoodViewHolder(@NonNull View itemView) {
+            super(itemView);
+            this.FoodView = itemView;
+        }
+
+        public void setTitle(String title){
+            TextView foodTitle = FoodView.findViewById(R.id.food_title);
+            foodTitle.setText(title);
+        }
+
+        public void setDescription(String description){
+            TextView foodDesc = FoodView.findViewById(R.id.food_desc);
+            foodDesc.setText(description);
+        }
+
+        public void setImage(final String image){
+            final ImageView foodImage = FoodView.findViewById(R.id.food_image);
+
+            Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).into(foodImage, new Callback() {
+                @Override
+                public void onSuccess() {
+
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    Picasso.get().load(image).into(foodImage);
                 }
             });
         }

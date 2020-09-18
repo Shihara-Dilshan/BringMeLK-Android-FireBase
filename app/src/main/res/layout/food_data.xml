@@ -15,7 +15,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="194dp"
-            android:id="@+id/category_image"
+            android:id="@+id/food_image"
             android:scaleType="centerCrop"
             />
 
@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/category_title"
+                android:id="@+id/food_title"
                 android:textSize="15sp"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 />
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:textSize="15sp"
-                android:id="@+id/category_desc"
+                android:id="@+id/food_desc"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
                 />
@@ -54,7 +54,37 @@
 
         </LinearLayout>
 
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
+            <Button
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="134dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/food_item_button"
+                android:text="View" />
+
+            <Button
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="134dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/food_item_button"
+                android:text="Buy" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
