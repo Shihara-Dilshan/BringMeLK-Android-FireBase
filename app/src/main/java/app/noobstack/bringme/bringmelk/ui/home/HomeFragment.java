@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,16 +15,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
+import app.noobstack.bringme.bringmelk.AdminDashboard;
 import app.noobstack.bringme.bringmelk.R;
 import app.noobstack.bringme.bringmelk.model.Data;
 import app.noobstack.bringme.bringmelk.model.Food;
 import app.noobstack.bringme.bringmelk.BuyActivity;
+import app.noobstack.bringme.bringmelk.startPage;
 
 public class HomeFragment extends Fragment {
 
@@ -31,6 +36,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerViewFood;
     private DatabaseReference CategoryDB;
     private DatabaseReference FoodDB;
+    private FirebaseUser currentUser;
+
 
 
 
@@ -59,12 +66,30 @@ public class HomeFragment extends Fragment {
         recyclerViewFood.setHasFixedSize(true);
         recyclerViewFood.setLayoutManager(linearLayoutManagerFood);
 
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String currentUserId = currentUser.getUid().toString();
+        System.out.println(currentUserId);
+
+
+        if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3")){
+            startActivity(new Intent(getActivity(), AdminDashboard.class));
+        }
+
         return root;
     }
 
     @Override
     public void onStart() {
         super.onStart();
+
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String currentUserId = currentUser.getUid().toString();
+        System.out.println(currentUserId);
+
+
+        if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3")){
+            startActivity(new Intent(getActivity(), AdminDashboard.class));
+        }
 
         FirebaseRecyclerAdapter<Data,CategoryViewHolder>adapter1=new FirebaseRecyclerAdapter<Data, CategoryViewHolder>(Data.class,R.layout.category_data, CategoryViewHolder.class,CategoryDB ) {
             @Override
@@ -107,6 +132,19 @@ public class HomeFragment extends Fragment {
 
 
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String currentUserId = currentUser.getUid().toString();
+        System.out.println(currentUserId);
+
+
+        if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3")){
+            startActivity(new Intent(getActivity(), AdminDashboard.class));
+        }
     }
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder{

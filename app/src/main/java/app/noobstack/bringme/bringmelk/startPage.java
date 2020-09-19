@@ -32,6 +32,7 @@ public class startPage extends AppCompatActivity {
     private EditText passwordField;
 
 
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +51,6 @@ public class startPage extends AppCompatActivity {
         passwordField = findViewById(R.id.editTextTextPassword2);
 
         mAuth = FirebaseAuth.getInstance();
-
 
         button = findViewById(R.id.loginBtn);
 

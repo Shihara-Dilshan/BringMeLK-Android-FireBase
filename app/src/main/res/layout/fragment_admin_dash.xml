@@ -10,5 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Admin Home fragment" />
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="log out"
+        android:onClick="adminLogout"/>
 </FrameLayout>
