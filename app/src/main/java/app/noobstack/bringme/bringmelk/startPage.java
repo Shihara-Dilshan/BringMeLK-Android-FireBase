@@ -3,7 +3,10 @@ package app.noobstack.bringme.bringmelk;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -67,6 +70,27 @@ public class startPage extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        startPage.this.unregisterReceiver(mMessageReceiver);
+    }
+
+    public void unregisterReceiver(BroadcastReceiver mMessageReceiver) {
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        startPage.this.registerReceiver(mMessageReceiver, new IntentFilter(Intent.ACTION_BATTERY_LOW));
+    }
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(context, "Device battery is low", Toast.LENGTH_SHORT).show();
+        }
+    };
 
     @Override
     public void onStart() {

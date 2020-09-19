@@ -44,13 +44,34 @@
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
                 />
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:text="Price Rs - "/>
+
+                <TextView
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/food_price" />
+
+                <TextView
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:text="Off(%) - "/>
+
+                <TextView
+                    android:layout_width="67dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/food_discount" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -62,26 +83,24 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <Button
-                style="?attr/borderlessButtonStyle"
+            <TextView
                 android:layout_width="134dp"
-                android:textColor="#ffffff"
+                android:textColor="#4CAF50"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:layout_height="40dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/food_item_button"
                 android:text="View" />
 
-            <Button
-                style="?attr/borderlessButtonStyle"
+            <TextView
                 android:layout_width="134dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textColor="#ffffff"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#4CAF50"
                 android:layout_height="40dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/view_button"
                 android:text="Buy" />
 
         </LinearLayout>

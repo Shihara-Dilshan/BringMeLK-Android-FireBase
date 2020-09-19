@@ -11,7 +11,10 @@
         android:roundIcon="@drawable/icons_shop"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignupActivity" android:windowSoftInputMode="stateVisible|adjustPan"></activity>
+        <activity android:name=".BuyActivity"></activity>
+        <activity
+            android:name=".SignupActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity android:name=".AdminDashboard" />
         <activity android:name=".AdminLogin" />
         <activity

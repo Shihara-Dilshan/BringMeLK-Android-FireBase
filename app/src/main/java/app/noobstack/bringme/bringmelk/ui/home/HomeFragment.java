@@ -1,5 +1,6 @@
 package app.noobstack.bringme.bringmelk.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.squareup.picasso.Picasso;
 import app.noobstack.bringme.bringmelk.R;
 import app.noobstack.bringme.bringmelk.model.Data;
 import app.noobstack.bringme.bringmelk.model.Food;
+import app.noobstack.bringme.bringmelk.BuyActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -77,14 +79,33 @@ public class HomeFragment extends Fragment {
 
         FirebaseRecyclerAdapter<Food,FoodViewHolder>adapter2=new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,R.layout.food_data, FoodViewHolder.class,FoodDB ) {
             @Override
-            protected void populateViewHolder(FoodViewHolder foodViewHolder, Food food, int i) {
+            protected void populateViewHolder(FoodViewHolder foodViewHolder, final Food food, int i) {
                 foodViewHolder.setTitle(food.getTitle());
                 foodViewHolder.setDescription(food.getDescription());
                 foodViewHolder.setImage(food.getImage());
+                foodViewHolder.setPrice(food.getPrice());
+                foodViewHolder.setDiscount(food.getDiscount());
+
+                foodViewHolder.FoodView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), BuyActivity.class);
+                        intent.putExtra("ITEM_ID", food.getId());
+                        intent.putExtra("ITEM_TITLE", food.getTitle());
+                        intent.putExtra("ITEM_DESC", food.getDescription());
+                        intent.putExtra("ITEM_IMAGE", food.getImage());
+                        intent.putExtra("ITEM_PRICE", food.getPrice());
+                        intent.putExtra("ITEM_DISCOUNT", food.getDiscount());
+
+                        startActivity(intent);
+                    }
+                });
             }
         };
 
         recyclerViewFood.setAdapter(adapter2);
+
+
 
     }
 
@@ -134,6 +155,16 @@ public class HomeFragment extends Fragment {
         public void setTitle(String title){
             TextView foodTitle = FoodView.findViewById(R.id.food_title);
             foodTitle.setText(title);
+        }
+
+        public void setPrice(String price){
+            TextView foodPrice = FoodView.findViewById(R.id.food_price);
+            foodPrice.setText(price);
+        }
+
+        public void setDiscount(String discount){
+            TextView foodDiscount = FoodView.findViewById(R.id.food_discount);
+            foodDiscount.setText(discount);
         }
 
         public void setDescription(String description){
