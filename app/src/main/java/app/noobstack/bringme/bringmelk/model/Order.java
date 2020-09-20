@@ -15,11 +15,15 @@ public class Order {
     String delivered_time;
     String Total_Price;
     String order_Id;
+    String image;
+    String item_count;
+    String item_name;
 
     public Order() {
     }
 
-    public Order(String buyer_Name, String buyer_Mobile, String buyer_Address, String requested_Time, String payment_status, String user_Id, String driver_Id, String prepared_Time, String delivered_time, String total_Price, String order_Id) {
+
+    public Order(String buyer_Name, String buyer_Mobile, String buyer_Address, String requested_Time, String payment_status, String user_Id, String driver_Id, String prepared_Time, String delivered_time, String total_Price, String order_Id, String image, String item_count, String item_name) {
         this.buyer_Name = buyer_Name;
         this.buyer_Mobile = buyer_Mobile;
         this.buyer_Address = buyer_Address;
@@ -31,6 +35,9 @@ public class Order {
         this.delivered_time = delivered_time;
         Total_Price = total_Price;
         this.order_Id = order_Id;
+        this.image = image;
+        this.item_count = item_count;
+        this.item_name = item_name;
     }
 
     public String getBuyer_Name() {
@@ -119,5 +126,29 @@ public class Order {
 
     public void setOrder_Id(String order_Id) {
         this.order_Id = order_Id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getItem_count() {
+        return item_count;
+    }
+
+    public void setItem_count(String item_count) {
+        this.item_count = item_count;
+    }
+
+    public String getItem_name() {
+        return item_name;
+    }
+
+    public void setItem_name(String item_name) {
+        this.item_name = item_name;
     }
 }

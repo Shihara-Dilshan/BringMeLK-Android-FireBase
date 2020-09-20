@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Logout.LogoutFragment"
-    android:background="@drawable/pngtree">
+    tools:context=".ui.Logout.LogoutFragment">
 
 
 
@@ -33,9 +32,9 @@
         android:layout_marginLeft="20dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
-        android:textColor="#FFFFFF"
+        android:textColor="#009688"
         android:layout_below="@+id/logoutButton"
-        android:background="#388E3C"
+        android:background="#FFFFFF"
         android:id="@+id/logoutCancelButton" />
 
 </RelativeLayout>

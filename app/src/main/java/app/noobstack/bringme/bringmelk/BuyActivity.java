@@ -23,7 +23,6 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -41,6 +40,8 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
     private FirebaseUser currentUser;
     private String currentUserId;
     private String currentUserEmail;
+    private String imageUrl;
+    private String item_name;
 
     private EditText buyerName;
     private EditText buyerMobile;
@@ -90,6 +91,7 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
                 String buyer_Mobile = buyerMobile.getText().toString().trim();
                 String buyer_Address = buyerAddress.getText().toString().trim();
                 String requested_Time = LocalDateTime.now().toString();
+                String image_url = imageUrl;
                 String payment_status = "pending";
                 String user_Id = currentUserId;
                 String driver_Id = "not assigned";
@@ -97,6 +99,8 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
                 String delivered_time = "not delivered";
                 String Total_Price = Double.toString(total);
                 String order_Id = UUID.randomUUID().toString();
+                String item_count = Integer.toString(count);
+                String itemName = item_name;
 
                 if(!TextUtils.isEmpty(buyer_Name) && !TextUtils.isEmpty(buyer_Mobile) && !TextUtils.isEmpty(buyer_Address)){
                     if(buyer_Mobile.length() != 10 || !buyer_Mobile.startsWith("0")){
@@ -114,6 +118,9 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
                         newOrder.setDelivered_time(delivered_time);
                         newOrder.setTotal_Price(Total_Price);
                         newOrder.setOrder_Id(order_Id);
+                        newOrder.setImage(image_url);
+                        newOrder.setItem_count(item_count);
+                        newOrder.setItem_name(itemName);
 
                         OrderDB.child(order_Id).setValue(newOrder);
 
@@ -179,6 +186,9 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
         String buy_food_discount = intent.getStringExtra("ITEM_DISCOUNT").toString();
         final String buy_food_image = intent.getStringExtra("ITEM_IMAGE").toString();
         id = intent.getStringExtra("ITEM_ID").toString();
+
+        imageUrl = buy_food_image;
+        item_name = buy_food_title;
 
         buyTextTitle.setText(buy_food_title);
         buyTextDesc.setText(buy_food_desc);
