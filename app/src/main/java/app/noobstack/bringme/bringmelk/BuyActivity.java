@@ -3,6 +3,8 @@ package app.noobstack.bringme.bringmelk;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,7 +31,7 @@ import java.util.UUID;
 
 import app.noobstack.bringme.bringmelk.model.Order;
 
-public class BuyActivity extends AppCompatActivity implements View.OnClickListener{
+public class BuyActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView buyImageView;
     private TextView buyTextTitle;
@@ -59,81 +61,107 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.increment:
-                if(count < 20){
+                if (count < 20) {
                     count++;
                     String initialCounterTag = count + " UNITS";
                     counterTag.setText(initialCounterTag);
-                    total = (count * oneUnitPrice) - (count * oneUnitPrice * discount/100.0);
+                    total = (count * oneUnitPrice) - (count * oneUnitPrice * discount / 100.0);
 
                     String initialTotalTag = "TOTAL PRICE " + total;
                     totalPriceTag.setText(initialTotalTag);
-                }else{
+                } else {
                     Toast.makeText(this, "Maximum 20 units can be delivered at a time", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.decrement:
-                if(count > 1){
+                if (count > 1) {
                     count--;
                     String initialCounterTag = count + " UNITS";
                     counterTag.setText(initialCounterTag);
-                    total = (count * oneUnitPrice) - (count * oneUnitPrice * discount/100.0);
+                    total = (count * oneUnitPrice) - (count * oneUnitPrice * discount / 100.0);
 
                     String initialTotalTag = "TOTAL PRICE " + total;
                     totalPriceTag.setText(initialTotalTag);
-                }else{
+                } else {
                     Toast.makeText(this, "You should order at least 1 unit", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.confirmBtn:
-                String buyer_Name = buyerName.getText().toString().trim();
-                String buyer_Mobile = buyerMobile.getText().toString().trim();
-                String buyer_Address = buyerAddress.getText().toString().trim();
-                String requested_Time = LocalDateTime.now().toString();
-                String image_url = imageUrl;
-                String payment_status = "pending";
-                String user_Id = currentUserId;
-                String driver_Id = "not assigned";
-                String prepared_Time = "not prepared";
-                String delivered_time = "not delivered";
-                String Total_Price = Double.toString(total);
-                String order_Id = UUID.randomUUID().toString();
-                String item_count = Integer.toString(count);
-                String itemName = item_name;
+                final String buyer_Name = buyerName.getText().toString().trim();
+                final String buyer_Mobile = buyerMobile.getText().toString().trim();
+                final String buyer_Address = buyerAddress.getText().toString().trim();
+                final String requested_Time = LocalDateTime.now().toString();
+                final String image_url = imageUrl;
+                final String payment_status = "pending";
+                final String user_Id = currentUserId;
+                final String driver_Id = "not assigned";
+                final String prepared_Time = "not prepared";
+                final String delivered_time = "not delivered";
+                final String Total_Price = Double.toString(total);
+                final String order_Id = UUID.randomUUID().toString();
+                final String item_count = Integer.toString(count);
+                final String itemName = item_name;
 
-                if(!TextUtils.isEmpty(buyer_Name) && !TextUtils.isEmpty(buyer_Mobile) && !TextUtils.isEmpty(buyer_Address)){
-                    if(buyer_Mobile.length() != 10 || !buyer_Mobile.startsWith("0")){
+                if (!TextUtils.isEmpty(buyer_Name) && !TextUtils.isEmpty(buyer_Mobile) && !TextUtils.isEmpty(buyer_Address)) {
+                    if (buyer_Mobile.length() != 10 || !buyer_Mobile.startsWith("0")) {
                         Toast.makeText(this, "Enter a valid mobile number", Toast.LENGTH_SHORT).show();
-                    }else{
-                        Order newOrder = new Order();
-                        newOrder.setBuyer_Name(buyer_Name);
-                        newOrder.setBuyer_Mobile(buyer_Mobile);
-                        newOrder.setBuyer_Address(buyer_Address);
-                        newOrder.setRequested_Time(requested_Time);
-                        newOrder.setPayment_status(payment_status);
-                        newOrder.setUser_Id(user_Id);
-                        newOrder.setDriver_Id(driver_Id);
-                        newOrder.setPrepared_Time(prepared_Time);
-                        newOrder.setDelivered_time(delivered_time);
-                        newOrder.setTotal_Price(Total_Price);
-                        newOrder.setOrder_Id(order_Id);
-                        newOrder.setImage(image_url);
-                        newOrder.setItem_count(item_count);
-                        newOrder.setItem_name(itemName);
+                    } else {
 
-                        OrderDB.child(order_Id).setValue(newOrder);
 
-                        Toast.makeText(this, "Order has been placed", Toast.LENGTH_SHORT).show();
+                        AlertDialog alertDialog = new AlertDialog.Builder(BuyActivity.this)
+
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+
+                                .setTitle("Place the order?")
+
+                                .setMessage("You will be charged Rs "+ total + " plus additional for the delivery charge")
+
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        //set what would happen when positive button is clicked
+                                        Order newOrder = new Order();
+                                        newOrder.setBuyer_Name(buyer_Name);
+                                        newOrder.setBuyer_Mobile(buyer_Mobile);
+                                        newOrder.setBuyer_Address(buyer_Address);
+                                        newOrder.setRequested_Time(requested_Time);
+                                        newOrder.setPayment_status(payment_status);
+                                        newOrder.setUser_Id(user_Id);
+                                        newOrder.setDriver_Id(driver_Id);
+                                        newOrder.setPrepared_Time(prepared_Time);
+                                        newOrder.setDelivered_time(delivered_time);
+                                        newOrder.setTotal_Price(Total_Price);
+                                        newOrder.setOrder_Id(order_Id);
+                                        newOrder.setImage(image_url);
+                                        newOrder.setItem_count(item_count);
+                                        newOrder.setItem_name(itemName);
+
+                                        OrderDB.child(order_Id).setValue(newOrder);
+
+                                        Toast.makeText(BuyActivity.this, "Order has been placed", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(BuyActivity.this, MainActivity.class));
+                                    }
+                                })
+
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        //set what should happen when negative button is clicked
+
+                                    }
+                                })
+                                .show();
+
                     }
 
-                }else {
+                } else {
                     Toast.makeText(this, "Fill out the fields", Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
                 break;
-
 
 
         }
@@ -169,14 +197,14 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
         totalPriceTag = findViewById(R.id.TotalPriceTag);
         confirmBtn = findViewById(R.id.confirmBtn);
 
-        String initialCounterTag = count + "UNITS";
+        String initialCounterTag = count + " UNITS";
         counterTag.setText(initialCounterTag);
 
         incrementBtn.setOnClickListener(this);
         decrementBtn.setOnClickListener(this);
         confirmBtn.setOnClickListener(this);
 
-        Intent intent =getIntent();
+        Intent intent = getIntent();
 
         OrderDB = FirebaseDatabase.getInstance().getReference().child("orders");
 
@@ -198,7 +226,7 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
         discount = Double.parseDouble(buy_food_discount);
         oneUnitPrice = Double.parseDouble(buy_food_price);
 
-        total = oneUnitPrice - (oneUnitPrice * discount/100.0);
+        total = oneUnitPrice - (oneUnitPrice * discount / 100.0);
 
         String initialTotalTag = "TOTAL PRICE " + total;
         totalPriceTag.setText(initialTotalTag);
@@ -216,7 +244,6 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
             }
         });
 
-        Toast.makeText(this, currentUserId, Toast.LENGTH_SHORT).show();
 
     }
 }

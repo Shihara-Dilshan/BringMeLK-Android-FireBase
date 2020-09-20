@@ -33,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp"
+                android:visibility="gone"
                 >
 
                 <TextView
@@ -60,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#4CAF50"
+                    android:textColor="#00796B"
                     android:text="Item Name"/>
 
                 <TextView
@@ -82,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#4CAF50"
+                    android:textColor="#00796B"
                     android:text="Ordered Time"/>
 
                 <TextView
@@ -104,7 +105,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#4CAF50"
+                    android:textColor="#00796B"
                     android:text="Total Price"/>
 
                 <TextView
@@ -126,7 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#4CAF50"
+                    android:textColor="#00796B"
                     android:text="Total Units"/>
 
                 <TextView
@@ -147,7 +148,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#4CAF50"
+                    android:textColor="#00796B"
                     android:layout_weight="1"
 
 
@@ -156,6 +157,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#F44336"
                     android:id="@+id/order_item_order_status"
                     android:layout_weight="0.5"/>
 
@@ -172,12 +174,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#4CAF50"
+                    android:textColor="#00796B"
                     android:text="Deliver Status"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#F44336"
                     android:id="@+id/order_item_deliver_status"
                     android:layout_weight="0.5"/>
 
@@ -194,12 +197,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#4CAF50"
+                    android:textColor="#00796B"
                     android:text="Payment Status"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#F44336"
                     android:id="@+id/order_item_payment_status"
                     android:layout_weight="0.5"/>
 
@@ -210,6 +214,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
                 >
 
                 <Button
@@ -218,7 +223,9 @@
                     android:layout_weight="1"
                     android:layout_marginEnd="5dp"
                     android:background="#FFFFFF"
-                    android:textColor="#4CAF50"
+                    android:textColor="#F44336"
+                    android:visibility="gone"
+                    android:id="@+id/order_reorder"
                     android:text="Re-Order"/>
 
                 <Button
@@ -226,6 +233,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="#F44336"
+                    android:visibility="gone"
+                    android:id="@+id/order_delete"
                     android:layout_marginEnd="5dp"
                     android:background="#FFFFFF"
                     android:text="Delete"/>
