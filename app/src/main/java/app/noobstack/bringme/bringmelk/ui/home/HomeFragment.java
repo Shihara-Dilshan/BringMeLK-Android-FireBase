@@ -1,13 +1,14 @@
 package app.noobstack.bringme.bringmelk.ui.home;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,12 +24,12 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
+
 import app.noobstack.bringme.bringmelk.AdminDashboard;
 import app.noobstack.bringme.bringmelk.R;
 import app.noobstack.bringme.bringmelk.model.Data;
 import app.noobstack.bringme.bringmelk.model.Food;
 import app.noobstack.bringme.bringmelk.BuyActivity;
-import app.noobstack.bringme.bringmelk.startPage;
 
 public class HomeFragment extends Fragment {
 
@@ -37,8 +38,6 @@ public class HomeFragment extends Fragment {
     private DatabaseReference CategoryDB;
     private DatabaseReference FoodDB;
     private FirebaseUser currentUser;
-
-
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
