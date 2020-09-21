@@ -1,5 +1,6 @@
 package app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -17,6 +18,8 @@ import com.google.firebase.database.Query;
 
 import app.noobstack.bringme.bringmelk.R;
 import app.noobstack.bringme.bringmelk.model.Order;
+import app.noobstack.bringme.bringmelk.ui.GetOrder;
+
 public class DeliverMangement extends Fragment {
     private RecyclerView OrderList;
     private DatabaseReference OrdersDB;
@@ -34,6 +37,11 @@ public class DeliverMangement extends Fragment {
         linearLayoutManager.setStackFromEnd(true);
         OrderList.setHasFixedSize(true);
         OrderList.setLayoutManager(linearLayoutManager);
+
+
+
+
+
         return root;
     }
     @Override
@@ -42,10 +50,26 @@ public class DeliverMangement extends Fragment {
 
         FirebaseRecyclerAdapter<Order, DeliverMangement.OrdersView> adapter1=new FirebaseRecyclerAdapter<Order, DeliverMangement.OrdersView>(Order.class,R.layout.orders_delivery_view, DeliverMangement.OrdersView.class,PendingOrders ) {
             @Override
-            protected void populateViewHolder(DeliverMangement.OrdersView ordersView, Order orders, int i) {
+            protected void populateViewHolder(DeliverMangement.OrdersView ordersView, final Order orders, int i) {
                 ordersView.setBuyer_Address(orders.getBuyer_Address());
                 ordersView.setBuyer_Name(orders.getBuyer_Name());
                 ordersView.setItem_name(orders.getItem_name());
+
+                ordersView.view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), GetOrder.class);
+                        intent.putExtra("order_Id",orders.getOrder_Id());
+                        intent.putExtra("buyer_Address",orders.getBuyer_Address());
+                        intent.putExtra("item_name",orders.getItem_name());
+                        intent.putExtra("buyer_Mobile",orders.getBuyer_Mobile());
+                        intent.putExtra("buyer_Name",orders.getBuyer_Name());
+                        startActivity(intent);
+                    }
+                });
+
+
+
             }
         };
         OrderList.setAdapter(adapter1);

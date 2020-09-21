@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/252093244/BringMeLK.iml" filepath="$PROJECT_DIR$/.idea/modules/252093244/BringMeLK.iml" group="BringMeLK" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1640864249/BringMeLK-Android-FireBase-BringMeLK.iml" filepath="$PROJECT_DIR$/.idea/modules/1640864249/BringMeLK-Android-FireBase-BringMeLK.iml" group="BringMeLK" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BringMeLK-app.iml" filepath="$PROJECT_DIR$/.idea/modules/BringMeLK-app.iml" group="BringMeLK/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="BringMeLK/app" />
     </modules>
   </component>
