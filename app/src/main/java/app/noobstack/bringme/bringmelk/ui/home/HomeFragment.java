@@ -70,7 +70,7 @@ public class HomeFragment extends Fragment {
         System.out.println(currentUserId);
 
 
-        if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3")){
+        if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3") || currentUserId.equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
             startActivity(new Intent(getActivity(), AdminDashboard.class));
         }
 
@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment {
         System.out.println(currentUserId);
 
 
-        if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3")){
+        if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3") || currentUserId.equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
             startActivity(new Intent(getActivity(), AdminDashboard.class));
         }
 
@@ -141,7 +141,7 @@ public class HomeFragment extends Fragment {
         System.out.println(currentUserId);
 
 
-        if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3")){
+        if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3") || currentUserId.equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
             startActivity(new Intent(getActivity(), AdminDashboard.class));
         }
     }

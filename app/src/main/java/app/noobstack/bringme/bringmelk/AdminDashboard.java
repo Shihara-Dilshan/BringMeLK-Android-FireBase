@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments.DeliverMangement;
 import app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments.FoodMngFragment;
@@ -29,6 +30,9 @@ public class AdminDashboard extends AppCompatActivity {
     private FoodMngFragment foodMngFragment;
     private paymentManagement payment_management;
 
+    private FirebaseUser currentUser;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +44,18 @@ public class AdminDashboard extends AppCompatActivity {
         foodMngFragment = new FoodMngFragment();
         payment_management = new paymentManagement();
 
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String currentUserId = currentUser.getUid().toString();
+        System.out.println(currentUserId);
 
-        navigateFragment(admindashfragment);
+
+        if(currentUserId.equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
+             navigateFragment(deliverMangement);
+        }else{
+            navigateFragment(admindashfragment);
+        }
+
+
         //hide the top title bar
         try {
             this.getSupportActionBar().hide();
@@ -54,19 +68,37 @@ public class AdminDashboard extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.Home:
-                        navigateFragment(admindashfragment);
+                        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
+                            navigateFragment(deliverMangement);
+                        }else{
+                            navigateFragment(admindashfragment);
+                        }
                         return true;
                     case R.id.Search_ico:
-                        navigateFragment(searchFragment);
+                        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
+                            navigateFragment(deliverMangement);
+                        }else{
+                            navigateFragment(searchFragment);
+                        }
                         return true;
                     case R.id.Cart_ico:
-                        navigateFragment(deliverMangement);
+                        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
+                            navigateFragment(deliverMangement);
+                        }
                         return true;
                     case R.id.Order_ico:
-                        navigateFragment(foodMngFragment);
+                        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
+                            navigateFragment(deliverMangement);
+                        }else{
+                            navigateFragment(foodMngFragment);
+                        }
                         return true;
                     case R.id.Profile_ico:
-                        navigateFragment(payment_management);
+                        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
+                            navigateFragment(deliverMangement);
+                        }else{
+                            navigateFragment(payment_management);
+                        }
                         return true;
                 }
                 return false;
