@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment"
+    android:background="#2E2D2D"
     android:orientation="vertical">
 
 <ScrollView
@@ -21,6 +22,7 @@
             android:layout_height="wrap_content"
             android:text="Popular Categories"
             android:padding="10dp"
+            android:textColor="#ffffff"
             android:layout_margin="5dp"
             android:textAppearance="?android:textAppearanceLarge"/>
 
@@ -36,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Popular Foods"
+            android:textColor="#ffffff"
             android:padding="10dp"
             android:layout_margin="5dp"
             android:textAppearance="?android:textAppearanceLarge"/>
@@ -52,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:textColor="#ffffff"
             android:text="Check out our social Media"/>
 
         <LinearLayout
@@ -83,7 +87,7 @@
                 android:id="@+id/ic_insta"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/iconfinder_instagram_1696894"/>
-           
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

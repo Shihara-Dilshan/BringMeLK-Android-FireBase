@@ -83,7 +83,7 @@
                 android:id="@+id/ic_insta"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/iconfinder_instagram_1696894"/>
-           
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

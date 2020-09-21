@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cb42bf68-ab96-4242-b8aa-b851a79e18e1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +24,13 @@
         <projects_view />
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1hn12DbLmMloKXKbxVlFVXEflVA" />
   <component name="ProjectViewState">
@@ -98,5 +110,44 @@
       <updated>1600631832496</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="394" y="110" width="651" height="719" key="#app" timestamp="1600635355565">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="394" y="110" width="651" height="719" key="#app/1440.393.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600635355565" />
+    <state x="692" y="323" width="535" height="432" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1600662064450">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="692" y="343" width="535" height="432" key="#com.intellij.ide.util.TreeClassChooserDialog/1440.393.1920.1080/0.31.1440.869@0.31.1440.869" timestamp="1600635911788" />
+    <state x="692" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600662064450" />
+    <state x="453" y="216" width="534" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600662639749">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="453" y="216" width="534" height="506" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600662639749" />
+    <state x="270" y="205" width="834" height="487" key="AndroidCreateResourceDirectoryDialog" timestamp="1600664556235">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="270" y="205" width="834" height="487" key="AndroidCreateResourceDirectoryDialog/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600664556235" />
+    <state x="303" y="226" width="834" height="487" key="AndroidCreateResourceFileDialog" timestamp="1600666082792">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="303" y="226" width="834" height="487" key="AndroidCreateResourceFileDialog/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600666082792" />
+    <state width="1394" height="218" key="GridCell.Tab.0.bottom" timestamp="1600669536302">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1394" height="218" key="GridCell.Tab.0.bottom/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600669536302" />
+    <state width="1394" height="218" key="GridCell.Tab.0.center" timestamp="1600669536302">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1394" height="218" key="GridCell.Tab.0.center/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600669536302" />
+    <state width="1394" height="218" key="GridCell.Tab.0.left" timestamp="1600669536302">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1394" height="218" key="GridCell.Tab.0.left/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600669536302" />
+    <state width="1394" height="218" key="GridCell.Tab.0.right" timestamp="1600669536302">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1394" height="218" key="GridCell.Tab.0.right/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600669536302" />
   </component>
 </project>

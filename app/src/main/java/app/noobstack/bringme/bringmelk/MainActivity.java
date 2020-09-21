@@ -1,6 +1,7 @@
 package app.noobstack.bringme.bringmelk;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -78,5 +79,10 @@ public class MainActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(MainActivity.this, startPage.class);
         startActivity(intent);
+    }
+
+    public void openFaceBook(View view) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://wwww.facebook.com"));
+        startActivity(browserIntent);
     }
 }
