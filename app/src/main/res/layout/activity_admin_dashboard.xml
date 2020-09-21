@@ -12,6 +12,7 @@
         android:layout_alignParentBottom="false"
         android:id="@+id/adminBottombar"
         app:menu="@menu/bottommenu"
+        app:itemTextColor="#ffffff"
         app:itemIconTint="#ffffff"
         android:background="#00796B">
 

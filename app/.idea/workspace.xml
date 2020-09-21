@@ -25,7 +25,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_6_API_23" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="420038a99a1f755b" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -41,8 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -71,7 +71,7 @@
       <recent name="app.noobstack.bringme.bringmelk.ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.BringMeLK-app">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -94,8 +94,6 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
@@ -145,8 +143,6 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
@@ -214,25 +210,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="270" y="205" width="834" height="487" key="AndroidCreateResourceDirectoryDialog/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600664556235" />
-    <state x="303" y="226" width="834" height="487" key="AndroidCreateResourceFileDialog" timestamp="1600698074634">
+    <state x="303" y="226" width="834" height="487" key="AndroidCreateResourceFileDialog" timestamp="1600704814785">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="226" width="834" height="487" key="AndroidCreateResourceFileDialog/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600698074634" />
-    <state width="1394" height="218" key="GridCell.Tab.0.bottom" timestamp="1600669536302">
+    <state x="303" y="226" width="834" height="487" key="AndroidCreateResourceFileDialog/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600704814785" />
+    <state width="1394" height="218" key="GridCell.Tab.0.bottom" timestamp="1600705060064">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.bottom/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600669536302" />
-    <state width="1394" height="218" key="GridCell.Tab.0.center" timestamp="1600669536302">
+    <state width="1394" height="218" key="GridCell.Tab.0.bottom/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600705060064" />
+    <state width="1394" height="218" key="GridCell.Tab.0.center" timestamp="1600705060064">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.center/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600669536302" />
-    <state width="1394" height="218" key="GridCell.Tab.0.left" timestamp="1600669536302">
+    <state width="1394" height="218" key="GridCell.Tab.0.center/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600705060064" />
+    <state width="1394" height="218" key="GridCell.Tab.0.left" timestamp="1600705060064">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.left/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600669536302" />
-    <state width="1394" height="218" key="GridCell.Tab.0.right" timestamp="1600669536302">
+    <state width="1394" height="218" key="GridCell.Tab.0.left/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600705060064" />
+    <state width="1394" height="218" key="GridCell.Tab.0.right" timestamp="1600705060064">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.right/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600669536302" />
+    <state width="1394" height="218" key="GridCell.Tab.0.right/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600705060064" />
   </component>
 </project>

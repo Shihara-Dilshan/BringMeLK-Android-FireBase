@@ -8,22 +8,42 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delivery Orders"
-        android:padding="10dp"
-        android:layout_margin="5dp"
-        android:textAppearance="?android:textAppearanceLarge"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/deliveryREview"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="665dp"></androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="10dp"
+                    android:layout_weight="0.5"
+                    android:textColor="#009688"
+                    android:text="Pending Delivery"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#F44336"
+                    android:background="#FFFFFF"
+                    android:onClick="adminLogout"
+                    android:text="Log out"/>
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/deliveryREview"
+                android:layout_width="match_parent"
+                android:layout_height="650dp"></androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>

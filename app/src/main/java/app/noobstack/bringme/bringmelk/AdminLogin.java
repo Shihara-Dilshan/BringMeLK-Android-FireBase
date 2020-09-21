@@ -29,6 +29,12 @@ public class AdminLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_login);
 
+        //hide the top title bar
+        try {
+            this.getSupportActionBar().hide();
+        } catch (NullPointerException e) {
+        }
+
         emailField = findViewById(R.id.adminEmailField);
         passwordField = findViewById(R.id.editTextTextPasswordAdmin);
 

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pngtree"
     tools:context=".SignupActivity">
 
     <ScrollView
@@ -34,41 +33,58 @@
                 android:textColor="#009688"
                 android:textSize="25sp" />
 
-            <EditText
-                android:id="@+id/signupemailField"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:inputType="textEmailAddress"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/input_fields"
-                android:hint="@string/login_email_hint" />
 
-            <EditText
-                android:id="@+id/editSignupTextTextPassword2"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
-                android:background="@drawable/input_fields"
-                android:ems="10"
-                android:hint="Password"
-                android:inputType="textPassword" />
+                android:hint="email">
 
-            <EditText
-                android:id="@+id/editTextTextConfirmPassword2"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/signupemailField"
+                    android:inputType="textEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:background="@drawable/input_fields"
-                android:ems="10"
-                android:hint="Confirm Password"
-                android:inputType="textPassword" />
+                android:hint="password">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editSignupTextTextPassword2"
+                    android:inputType="textPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:hint="password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextTextConfirmPassword2"
+                    android:inputType="textPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/signUpBtnAdd"
@@ -77,7 +93,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
-                android:background="@drawable/signup_btn"
+                android:background="@drawable/signup_btnnew"
                 android:text="Sign Up"
                 android:textColor="#FFFFFF" />
 
