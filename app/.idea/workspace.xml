@@ -7,18 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb42bf68-ab96-4242-b8aa-b851a79e18e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_database_0_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_database_0_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/noobstack/bringme/bringmelk/ui/Admin/dashboardFragments/DeliverMangement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/noobstack/bringme/bringmelk/ui/Admin/dashboardFragments/DeliverMangement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,10 +61,59 @@
       <recent name="app.noobstack.bringme.bringmelk.ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android App.BringMeLK-Android-FireBase-app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BringMeLK-Android-FireBase-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="BringMeLK-Android-FireBase-app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -192,9 +231,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="394" y="110" width="651" height="719" key="#app" timestamp="1600635355565">
+    <state x="394" y="110" width="651" height="719" key="#app" timestamp="1600711116443">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="394" y="110" key="#app/1440.379.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600711116443" />
     <state x="394" y="110" width="651" height="719" key="#app/1440.393.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600635355565" />
     <state x="692" y="323" width="535" height="432" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1600662064450">
       <screen x="0" y="0" width="1440" height="900" />
@@ -214,21 +254,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="303" y="226" width="834" height="487" key="AndroidCreateResourceFileDialog/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600704814785" />
-    <state width="1394" height="218" key="GridCell.Tab.0.bottom" timestamp="1600705060064">
+    <state width="1394" height="218" key="GridCell.Tab.0.bottom" timestamp="1600712920207">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.bottom/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600705060064" />
-    <state width="1394" height="218" key="GridCell.Tab.0.center" timestamp="1600705060064">
+    <state width="1394" height="218" key="GridCell.Tab.0.bottom/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600712920207" />
+    <state width="1394" height="218" key="GridCell.Tab.0.center" timestamp="1600712920206">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.center/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600705060064" />
-    <state width="1394" height="218" key="GridCell.Tab.0.left" timestamp="1600705060064">
+    <state width="1394" height="218" key="GridCell.Tab.0.center/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600712920206" />
+    <state width="1394" height="218" key="GridCell.Tab.0.left" timestamp="1600712920206">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.left/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600705060064" />
-    <state width="1394" height="218" key="GridCell.Tab.0.right" timestamp="1600705060064">
+    <state width="1394" height="218" key="GridCell.Tab.0.left/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600712920206" />
+    <state width="1394" height="218" key="GridCell.Tab.0.right" timestamp="1600712920206">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.right/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600705060064" />
+    <state width="1394" height="218" key="GridCell.Tab.0.right/1440.395.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600712920206" />
+    <state x="380" y="295" key="com.intellij.ide.util.TipDialog" timestamp="1600711450680">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="380" y="295" key="com.intellij.ide.util.TipDialog/1440.379.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1600711450680" />
   </component>
 </project>
