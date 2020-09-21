@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pngtree"
     android:orientation="vertical"
     tools:context=".startPage">
 
@@ -90,7 +89,7 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/signup_btn"
                 android:text="Sign Up"
-                android:textColor="#FFFFFF"
+                android:textColor="#4CAF50"
                 android:onClick="signUpPage"/>
 
             <TextView

@@ -3,12 +3,14 @@
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#2E2D2D"
     android:layout_margin="8dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#2E2D2D"
         android:orientation="vertical">
 
         <!-- Media -->
@@ -24,6 +26,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="16dp"
+            android:background="#2E2D2D"
             android:paddingRight="16dp"
             android:paddingTop="5dp">
 
@@ -34,6 +37,7 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp"
                 android:visibility="gone"
+                android:background="#2E2D2D"
                 >
 
                 <TextView
@@ -61,13 +65,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#00796B"
+                    android:textColor="#ffffff"
                     android:text="Item Name"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/order_item_title"
+                    android:textColor="#ffffff"
                     android:layout_weight="0.5"/>
 
             </LinearLayout>
@@ -83,11 +88,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#00796B"
+                    android:textColor="#ffffff"
                     android:text="Ordered Time"/>
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:textColor="#ffffff"
                     android:layout_height="wrap_content"
                     android:id="@+id/order_item_request_date"
                     android:layout_weight="0.5"/>
@@ -105,13 +111,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#00796B"
+                    android:textColor="#ffffff"
                     android:text="Total Price"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/order_item_ptice"
+                    android:textColor="#ffffff"
                     android:layout_weight="0.5"/>
 
             </LinearLayout>
@@ -127,12 +134,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#00796B"
+                    android:textColor="#ffffff"
                     android:text="Total Units"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
                     android:id="@+id/order_item_count"
                     android:layout_weight="0.5"/>
 
@@ -147,12 +155,13 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#00796B"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
 
+                    android:text="Order Prepared at"
 
-                    android:text="Order Prepared at"/>
+
+                    android:textColor="#ffffff" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -174,7 +183,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#00796B"
+                    android:textColor="#ffffff"
                     android:text="Deliver Status"/>
 
                 <TextView
@@ -197,7 +206,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#00796B"
+                    android:textColor="#ffffff"
                     android:text="Payment Status"/>
 
                 <TextView
@@ -222,8 +231,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginEnd="5dp"
-                    android:background="#FFFFFF"
-                    android:textColor="#F44336"
+                    android:background="#595757"
+                    android:textColor="#4CAF50"
                     android:visibility="gone"
                     android:id="@+id/order_reorder"
                     android:text="Re-Order"/>
@@ -232,11 +241,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#F44336"
+                    android:textColor="#4CAF50"
                     android:visibility="gone"
                     android:id="@+id/order_delete"
                     android:layout_marginEnd="5dp"
-                    android:background="#FFFFFF"
+                    android:background="#595757"
                     android:text="Delete"/>
 
             </LinearLayout>
