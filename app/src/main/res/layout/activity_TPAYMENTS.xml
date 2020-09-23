@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BuyActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Media -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:id="@+id/buy_food_image"
+                android:scaleType="centerCrop"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buy_food_title"
+                    android:textSize="15sp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="15sp"
+                    android:id="@+id/buy_food_desc"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="67dp"
+                        android:layout_height="match_parent"
+                        android:text="Price Rs - "/>
+
+                    <TextView
+                        android:layout_width="67dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/buy_food_price" />
+
+                    <TextView
+                        android:layout_width="67dp"
+                        android:layout_height="match_parent"
+                        android:text="Off(%) - "/>
+
+                    <TextView
+                        android:layout_width="67dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/buy_food_discount" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/TotalPriceTag"
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"
+                android:textSize="15sp"
+                android:background="#F44336"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_height="wrap_content"
+                android:text="Total Price - Rs 320"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="* Deliver charges will informed by the driver"
+                android:textColor="#F44336"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/TotalUnitTag"
+                    android:layout_width="match_parent"
+                    android:textColor="#4CAF50"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_height="wrap_content"
+                    android:text="2 Units"/>
+                <Button
+                    android:id="@+id/increment"
+                    android:layout_width="match_parent"
+                    android:layout_weight="2"
+                    android:textColor="#4CAF50"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="15sp"
+                    android:background="#ffffff"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"/>
+                <Button
+                    android:id="@+id/decrement"
+                    android:layout_width="match_parent"
+                    android:layout_weight="2"
+                    android:textColor="#4CAF50"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="15sp"
+                    android:background="#ffffff"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fill out the following fields"
+                android:layout_marginLeft="16dp"
+                android:textColor="#009688"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:hint="your name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/buyerName"
+                    android:inputType="text"
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:hint="contact no">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/buyerContactNo"
+                    android:inputType="phone"
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:hint="Current Location">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/buyerAddress"
+                    android:inputType="textPostalAddress"
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/confirmBtn"
+                android:layout_width="match_parent"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="16dp"
+                android:textSize="15sp"
+                android:background="#4CAF50"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_height="wrap_content"
+                android:text="Confirm Order">
+
+            </Button>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>
