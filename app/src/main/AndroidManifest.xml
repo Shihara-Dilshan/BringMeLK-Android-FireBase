@@ -11,8 +11,10 @@
         android:roundIcon="@drawable/icons_shop"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.GetOrder"></activity>
-        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".ui.Complete_Order"></activity>
+        <activity android:name=".ui.OrderDetails" />
+        <activity android:name=".ui.GetOrder" />
+        <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.Admin.dashboardFragments.GetOrder" />
         <activity android:name=".BuyActivity" />
         <activity
