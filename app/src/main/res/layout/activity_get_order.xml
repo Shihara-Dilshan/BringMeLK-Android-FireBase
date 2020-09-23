@@ -5,40 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.GetOrder">
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-
-
         <!-- Media -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="400dp"
             app:srcCompat="@drawable/delivery"
             android:scaleType="centerCrop"
-
             />
-
-        <LinearLayout
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
-            <LinearLayout
+                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp">
-            <TextView
+                    <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
@@ -113,8 +104,7 @@
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
             </LinearLayout>
-
-        </LinearLayout>
+            </LinearLayout>
         <Button
             android:id="@+id/getorder"
             android:layout_width="match_parent"
@@ -128,9 +118,6 @@
             android:text="Get Order"
             android:radius="5dp"
             />
-
-
-
-    </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>

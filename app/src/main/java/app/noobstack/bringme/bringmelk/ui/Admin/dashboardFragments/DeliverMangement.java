@@ -1,5 +1,4 @@
 package app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments;
-
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -30,18 +29,12 @@ public class DeliverMangement extends Fragment {
         View root =inflater.inflate(R.layout.fragment_deliver_mangement, container, false);
         OrdersDB= FirebaseDatabase.getInstance().getReference().child("orders");
         PendingOrders = OrdersDB.orderByChild("delivered_time").equalTo("not delivered");
-        //Query gcfgh = OrdersDB.orderByKey().equalTo("khkjhjkhjk");
         OrderList = root.findViewById(R.id.deliveryREview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
         OrderList.setHasFixedSize(true);
         OrderList.setLayoutManager(linearLayoutManager);
-
-
-
-
-
         return root;
     }
     @Override
@@ -54,7 +47,7 @@ public class DeliverMangement extends Fragment {
                 ordersView.setBuyer_Address(orders.getBuyer_Address());
                 ordersView.setBuyer_Name(orders.getBuyer_Name());
                 ordersView.setItem_name(orders.getItem_name());
-
+                ordersView.setItemQuantity(orders.getItem_count());
                 ordersView.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -64,12 +57,11 @@ public class DeliverMangement extends Fragment {
                         intent.putExtra("item_name",orders.getItem_name());
                         intent.putExtra("buyer_Mobile",orders.getBuyer_Mobile());
                         intent.putExtra("buyer_Name",orders.getBuyer_Name());
+                        intent.putExtra("Item_Price" ,orders.getTotal_Price());
+                        intent.putExtra("Quantity" ,orders.getItem_count());
                         startActivity(intent);
                     }
                 });
-
-
-
             }
         };
         OrderList.setAdapter(adapter1);
@@ -91,6 +83,10 @@ public class DeliverMangement extends Fragment {
         public void setItem_name(String title){
             TextView OrderItem = view.findViewById(R.id.ItemName);
             OrderItem.setText(title);
+        }
+        public void setItemQuantity(String quantity){
+            TextView Quantity = view.findViewById(R.id.Quantity_);
+            Quantity.setText(quantity);
         }
     }
 }
