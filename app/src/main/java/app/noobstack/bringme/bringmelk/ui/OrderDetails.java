@@ -15,6 +15,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
+
+import app.noobstack.bringme.bringmelk.AdminDashboard;
 import app.noobstack.bringme.bringmelk.R;
 import app.noobstack.bringme.bringmelk.model.CompletedOrders;
 import app.noobstack.bringme.bringmelk.ui.Admin.dashboardFragments.DeliverMangement;
@@ -44,12 +46,14 @@ public class OrderDetails extends AppCompatActivity {
     private Button BtnOrderComplete;
     private Button BtnRemoveDriver;
     private String Fcharge;
+    private FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+    private String currentUserId = currentUser.getUid();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_details);
         orderdetailsDB = FirebaseDatabase.getInstance().getReference().child("orders");
-        CompleteOrder=FirebaseDatabase.getInstance().getReference().child("CompletedOrders");
+        CompleteOrder=FirebaseDatabase.getInstance().getReference().child("completedOrders");
         button1=findViewById(R.id.radio_button_1);
         button2=findViewById(R.id.radio_button_2);
         button3=findViewById(R.id.radio_button_3);
@@ -117,9 +121,9 @@ public class OrderDetails extends AppCompatActivity {
                 if(distance.getText().toString().length()==0){
                     distance.setText("0");
                 }
-                int Distance= Integer.parseInt(distance.getText().toString());
-                int chargers=50;
-                int DeliveryChargers= chargers*Distance;
+                double Distance= Double.parseDouble(distance.getText().toString());
+                double chargers=50;
+                double DeliveryChargers= chargers*Distance;
                 Fcharge=String.valueOf(DeliveryChargers);
                 Dcalculation.setText("RS :"+Fcharge+"/=");
                /* HashMap hashMap = new HashMap();
@@ -131,6 +135,11 @@ public class OrderDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addCompleteOrder();
+                HashMap hashMap = new HashMap();
+                hashMap.put("delivered_time","delivered");
+                hashMap.put("payment_status","paid");
+                orderdetailsDB.child(OrderId).updateChildren(hashMap);
+                startActivity(new Intent(OrderDetails.this, AdminDashboard.class));
             }
         });
         BtnRemoveDriver.setOnClickListener(new View.OnClickListener() {
@@ -141,13 +150,13 @@ public class OrderDetails extends AppCompatActivity {
                 hashMap.put("driver_Id","not Assigned");
                 orderdetailsDB.child(OrderId).updateChildren(hashMap);
                 Toast.makeText(OrderDetails.this, "You removed from the order", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(OrderDetails.this, AdminDashboard.class));
             }
         });
     }
-
     public void addCompleteOrder(){
             String id = CompleteOrder.push().getKey();
-            CompletedOrders completedOrders= new CompletedOrders(buyerAddress,Fcharge,itemname,itemprice,mobile,quantity);
+            CompletedOrders completedOrders= new CompletedOrders(buyerAddress,Fcharge,itemname,itemprice,mobile,quantity,buyerName,currentUserId);
             CompleteOrder.child(id).setValue(completedOrders);
             Toast.makeText(this, "Order Completed", Toast.LENGTH_SHORT).show();
     }

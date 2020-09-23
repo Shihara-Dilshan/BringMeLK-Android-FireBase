@@ -14,8 +14,6 @@
         <activity android:name=".ui.Complete_Order"></activity>
         <activity android:name=".ui.OrderDetails" />
         <activity android:name=".ui.GetOrder" />
-        <activity android:name=".ui.MainActivity" />
-        <activity android:name=".ui.Admin.dashboardFragments.GetOrder" />
         <activity android:name=".BuyActivity" />
         <activity
             android:name=".SignupActivity"
