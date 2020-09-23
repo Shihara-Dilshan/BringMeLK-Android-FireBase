@@ -117,4 +117,8 @@ public class AdminDashboard extends AppCompatActivity {
         Intent intent = new Intent(AdminDashboard.this, startPage.class);
         startActivity(intent);
     }
+
+    public void viewTotalOrders(View view) {
+        startActivity(new Intent(AdminDashboard.this, TotalPayments.class));
+    }
 }
