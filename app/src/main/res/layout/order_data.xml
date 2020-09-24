@@ -150,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="#00796B"
-                    android:text="deliver Charge"/>
+                    android:text="Deliver Charge"/>
 
                 <TextView
                     android:layout_width="match_parent"
