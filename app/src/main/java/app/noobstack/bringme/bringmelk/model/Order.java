@@ -18,12 +18,13 @@ public class Order {
     String image;
     String item_count;
     String item_name;
+    String deliverCharge;
 
     public Order() {
     }
 
 
-    public Order(String buyer_Name, String buyer_Mobile, String buyer_Address, String requested_Time, String payment_status, String user_Id, String driver_Id, String prepared_Time, String delivered_time, String total_Price, String order_Id, String image, String item_count, String item_name) {
+    public Order(String buyer_Name, String buyer_Mobile, String buyer_Address, String requested_Time, String payment_status, String user_Id, String driver_Id, String prepared_Time, String delivered_time, String total_Price, String order_Id, String image, String item_count, String item_name, String deliverCharge) {
         this.buyer_Name = buyer_Name;
         this.buyer_Mobile = buyer_Mobile;
         this.buyer_Address = buyer_Address;
@@ -38,6 +39,7 @@ public class Order {
         this.image = image;
         this.item_count = item_count;
         this.item_name = item_name;
+        this.deliverCharge = deliverCharge;
     }
 
     public String getBuyer_Name() {
@@ -150,5 +152,13 @@ public class Order {
 
     public void setItem_name(String item_name) {
         this.item_name = item_name;
+    }
+
+    public String getDeliverCharge() {
+        return deliverCharge;
+    }
+
+    public void setDeliverCharge(String deliverCharge) {
+        this.deliverCharge = deliverCharge;
     }
 }
