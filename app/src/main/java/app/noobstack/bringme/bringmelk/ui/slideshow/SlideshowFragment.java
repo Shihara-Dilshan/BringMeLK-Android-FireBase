@@ -88,6 +88,7 @@ public class SlideshowFragment extends Fragment {
                 orderViewHolder.setPrepared_Time(order.getPrepared_Time().toUpperCase());
                 orderViewHolder.setDelivered_time(order.getDelivered_time().toUpperCase());
                 orderViewHolder.setPayment_status(order.getPayment_status().toUpperCase());
+                orderViewHolder.setDeliverCharge(order.getDeliverCharge());
 
                 userOrders.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -197,6 +198,12 @@ public class SlideshowFragment extends Fragment {
             order_order_payment_Status_TAG = order_item_payment_status;
             order_item_payment_status.setText(payment_status);
         }
+
+        public void setDeliverCharge(String deliverCharge) {
+            TextView order_item_del_charge = myview.findViewById(R.id.order_item_delCharge);
+            order_item_del_charge.setText(deliverCharge);
+        }
+
 
         public void setImage(final String image) {
             final ImageView order_iem_image = myview.findViewById(R.id.order_item_image);
