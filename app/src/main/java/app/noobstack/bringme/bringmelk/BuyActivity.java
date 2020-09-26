@@ -99,6 +99,7 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
                 final String driver_Id = "not assigned";
                 final String prepared_Time = "not prepared";
                 final String delivered_time = "not delivered";
+                final String deliver_charge = "not calculated";
                 final String Total_Price = Double.toString(total);
                 final String order_Id = UUID.randomUUID().toString();
                 final String item_count = Integer.toString(count);
@@ -137,6 +138,7 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
                                         newOrder.setImage(image_url);
                                         newOrder.setItem_count(item_count);
                                         newOrder.setItem_name(itemName);
+                                        newOrder.setDeliverCharge(deliver_charge);
 
                                         OrderDB.child(order_Id).setValue(newOrder);
 

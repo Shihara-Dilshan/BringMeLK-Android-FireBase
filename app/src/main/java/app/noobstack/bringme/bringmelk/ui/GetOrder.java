@@ -26,10 +26,18 @@ public class GetOrder extends AppCompatActivity {
     private String buyerAddress;
     private String buyerMobile;
     private String itemname;
+    private String Buyer_Address_;
+    private String Item_name_;
+    private String Buyer_Mobile_;
+    private String Buyer_Name_;
+    private String Item_Price_;
+    private String Quantity;
     private TextView buyer_Address;
     private TextView item_name;
     private TextView buyer_Mobile;
     private TextView buyer_Name;
+
+
     private FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
     private String currentUserId = currentUser.getUid();
     private Button GetOrderButton;
@@ -52,12 +60,20 @@ public class GetOrder extends AppCompatActivity {
         String item_name_ = intent.getStringExtra("item_name").toString();
         String buyer_Mobile_ = intent.getStringExtra("buyer_Mobile").toString();
         String buyer_Name_ = intent.getStringExtra("buyer_Name").toString();
+        Item_Price_= intent.getStringExtra("Item_Price").toString();
+        Quantity=intent.getStringExtra("Quantity").toString();
         Orderid = intent.getStringExtra("order_Id").toString();
 
         buyer_Name.setText(buyer_Name_);
         buyer_Address.setText(buyer_Address_);
         item_name.setText(item_name_);
         buyer_Mobile.setText(buyer_Mobile_);
+
+        Buyer_Address_=buyer_Address_;
+        Item_name_=item_name_;
+        Buyer_Mobile_=buyer_Mobile_;
+        Buyer_Name_=buyer_Name_;
+
 
         GetOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,8 +87,23 @@ public class GetOrder extends AppCompatActivity {
                         Toast.makeText(GetOrder.this, "Assigned", Toast.LENGTH_SHORT).show();
                     }
                 });
+                openOrderDetails();
             }
+
         });
+    }
+    public void  openOrderDetails(){
+        Intent intent= new Intent(this,OrderDetails.class);
+        intent.putExtra("orderId",Orderid);
+        intent.putExtra("buyerAddress",Buyer_Address_);
+        intent.putExtra("itemname",Item_name_);
+        intent.putExtra("buyerMobile",Buyer_Mobile_);
+        intent.putExtra("buyerName",Buyer_Name_);
+        intent.putExtra("ItemPrice" ,Item_Price_);
+        intent.putExtra("quantity" ,Quantity);
+        startActivity(intent);
+
 
     }
+
 }

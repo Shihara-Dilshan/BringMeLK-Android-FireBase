@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.OrderDetails">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Media -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:srcCompat="@drawable/sd"
+                android:scaleType="centerCrop"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="129dp"
+                        android:layout_height="wrap_content"
+                        android:text="Customer Name :"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="15sp"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#6e6d6b"
+                        android:id="@+id/Cusname"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:layout_weight="0.5"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="74dp"
+                        android:layout_height="match_parent"
+                        android:text="Address:"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/Address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="#6e6d6b"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="93dp"
+                        android:layout_height="wrap_content"
+                        android:text="Item Name :"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#6e6d6b"
+                        android:id="@+id/Itemname"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="193dp"
+                        android:layout_height="wrap_content"
+                        android:text="Customer Mobile Number :"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#6e6d6b"
+                        android:id="@+id/Cusphn"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="79dp"
+                        android:layout_height="wrap_content"
+                        android:text="Quantity :"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#6e6d6b"
+                        android:id="@+id/Quantity"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="86dp"
+                        android:layout_height="wrap_content"
+                        android:text="Item Price :"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#6e6d6b"
+                        android:id="@+id/Itemprice"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    >
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0.2dp"
+                        android:hint="Enter Distance">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/Distance"
+                            android:inputType="textEmailAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/Calculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/deliveryorderbutton"
+                    android:text="Calculate delivery charge"
+                    android:textColor="#FFFFFF" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="70dp"
+                    >
+
+                    <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:text="You have to get :"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/calculation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="#6e6d6b"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            >
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:checkedButton="@+id/radio_button_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+                <RadioButton
+                    android:id="@+id/radio_button_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Food is still making"
+                    android:layout_marginLeft="20dp"
+                    />
+                <RadioButton
+                    android:id="@+id/radio_button_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Food is picked up"
+                    android:layout_marginLeft="20dp"
+                    />
+                <RadioButton
+                    android:id="@+id/radio_button_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="on the location"
+                    android:layout_marginLeft="20dp"
+                    />
+                <RadioButton
+                    android:id="@+id/radio_button_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Item Delivered"
+                    android:layout_marginLeft="20dp"
+                    />
+
+            </RadioGroup>
+        </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"
+                android:textSize="15sp"
+                android:background="@drawable/deliveryorderbutton"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_height="wrap_content"
+                android:text="Complete your Order"
+                android:radius="5dp"
+                android:id="@+id/BtnCompelete"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="16dp"
+                android:textSize="15sp"
+                android:background="@drawable/deliveryorderbutton"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_height="wrap_content"
+                android:text="Remove me from the order"
+                android:radius="5dp"
+                android:id="@+id/RemoveDriver"
+                />
+
+
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            >
+
+        </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>
