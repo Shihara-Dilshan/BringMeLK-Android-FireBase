@@ -118,6 +118,15 @@ public class AdminDashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void addFood(View view){
+        Intent intent = new Intent (AdminDashboard.this, AddNewFood.class);
+        startActivity(intent);
+    }
+    public void viewFood(View view) {
+        Intent intent = new Intent(AdminDashboard.this, ManageFoodActivity.class);
+        startActivity(intent);
+    }
+
     public void viewTotalOrders(View view) {
         startActivity(new Intent(AdminDashboard.this, TotalPayments.class));
     }

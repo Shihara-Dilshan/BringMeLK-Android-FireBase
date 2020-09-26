@@ -21,6 +21,9 @@
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity android:name=".AdminDashboard" />
         <activity android:name=".AdminLogin" />
+        <activity android:name=".EditFoodItemActivity"/>
+        <activity android:name=".ManageFoodActivity" />
+        <activity android:name=".AddNewFood" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
