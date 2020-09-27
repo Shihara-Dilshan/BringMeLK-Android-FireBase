@@ -11,7 +11,14 @@
         android:roundIcon="@drawable/icons_shop"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TotalPayments"></activity>
+        <activity android:name=".LoadingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TotalPayments" />
         <activity android:name=".ui.Complete_Order" />
         <activity android:name=".ui.OrderDetails" />
         <activity android:name=".ui.GetOrder" />
@@ -21,7 +28,7 @@
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity android:name=".AdminDashboard" />
         <activity android:name=".AdminLogin" />
-        <activity android:name=".EditFoodItemActivity"/>
+        <activity android:name=".EditFoodItemActivity" />
         <activity android:name=".ManageFoodActivity" />
         <activity android:name=".AddNewFood" />
         <activity
@@ -30,11 +37,6 @@
         <activity
             android:name=".startPage"
             android:windowSoftInputMode="stateVisible|adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"

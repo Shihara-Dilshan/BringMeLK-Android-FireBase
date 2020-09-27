@@ -19,12 +19,15 @@ public class Order {
     String item_count;
     String item_name;
     String deliverCharge;
+    String itemId;
+    String itemDesc;
+    String itemDiscount;
+    String priceOriginal;
 
     public Order() {
     }
 
-
-    public Order(String buyer_Name, String buyer_Mobile, String buyer_Address, String requested_Time, String payment_status, String user_Id, String driver_Id, String prepared_Time, String delivered_time, String total_Price, String order_Id, String image, String item_count, String item_name, String deliverCharge) {
+    public Order(String buyer_Name, String buyer_Mobile, String buyer_Address, String requested_Time, String payment_status, String user_Id, String driver_Id, String prepared_Time, String delivered_time, String total_Price, String order_Id, String image, String item_count, String item_name, String deliverCharge, String itemId, String itemDesc, String itemDiscount, String priceOriginal) {
         this.buyer_Name = buyer_Name;
         this.buyer_Mobile = buyer_Mobile;
         this.buyer_Address = buyer_Address;
@@ -40,6 +43,10 @@ public class Order {
         this.item_count = item_count;
         this.item_name = item_name;
         this.deliverCharge = deliverCharge;
+        this.itemId = itemId;
+        this.itemDesc = itemDesc;
+        this.itemDiscount = itemDiscount;
+        this.priceOriginal = priceOriginal;
     }
 
     public String getBuyer_Name() {
@@ -160,5 +167,37 @@ public class Order {
 
     public void setDeliverCharge(String deliverCharge) {
         this.deliverCharge = deliverCharge;
+    }
+
+    public String getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    public String getItemDesc() {
+        return itemDesc;
+    }
+
+    public void setItemDesc(String itemDesc) {
+        this.itemDesc = itemDesc;
+    }
+
+    public String getItemDiscount() {
+        return itemDiscount;
+    }
+
+    public void setItemDiscount(String itemDiscount) {
+        this.itemDiscount = itemDiscount;
+    }
+
+    public String getPriceOriginal() {
+        return priceOriginal;
+    }
+
+    public void setPriceOriginal(String priceOriginal) {
+        this.priceOriginal = priceOriginal;
     }
 }
