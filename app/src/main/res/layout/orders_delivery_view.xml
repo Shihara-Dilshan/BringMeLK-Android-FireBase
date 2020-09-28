@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#FFFF"
+        android:background="@drawable/cardd"
         >
 
         <LinearLayout
@@ -29,6 +29,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#00796B"
                     android:text="DELIVERY ADDRESS :"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="15sp" />
@@ -54,7 +55,7 @@
                     android:layout_marginTop="8dp"
                     android:text="CUSTOMER NAME :"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="#050505"
+                    android:textColor="#00796B"
                     android:textSize="15sp" />
 
                 <TextView
@@ -80,7 +81,7 @@
                     android:text="ITEM NAME :"
 
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="#050505"
+                    android:textColor="#00796B"
                     android:textSize="15sp" />
 
                 <TextView
@@ -100,13 +101,14 @@
                 android:orientation="horizontal"
 
                 >
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="QUANTITY :"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="#050505"
+                    android:textColor="#00796B"
                     android:textSize="15sp" />
                 <TextView
                     android:id="@+id/Quantity_"
@@ -124,9 +126,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/carddesign"
                 android:orientation="horizontal"
-
                 >
-
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
