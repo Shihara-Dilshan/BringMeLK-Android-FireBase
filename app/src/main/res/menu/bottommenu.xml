@@ -6,11 +6,6 @@
         android:icon="@drawable/ic_home"
         app:showAsAction="always" />
 
-    <item android:id="@+id/Search_ico"
-        android:title="Search"
-        android:icon="@drawable/ic_search"
-        app:showAsAction="always" />
-
     <item android:id="@+id/Cart_ico"
         android:title="Delivery"
         android:icon="@drawable/ic_delivery2"

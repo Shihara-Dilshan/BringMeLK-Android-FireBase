@@ -26,7 +26,9 @@ import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.UUID;
 
 import app.noobstack.bringme.bringmelk.model.Order;
@@ -39,6 +41,9 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
     private TextView buyTextPrice;
     private TextView buyTextDiscount;
     private String id;
+    private String description;
+    private String priceOriginal;
+    private String discountOriginal;
     private FirebaseUser currentUser;
     private String currentUserId;
     private String currentUserEmail;
@@ -58,7 +63,6 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
 
     private DatabaseReference OrderDB;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -92,9 +96,10 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
                 final String buyer_Name = buyerName.getText().toString().trim();
                 final String buyer_Mobile = buyerMobile.getText().toString().trim();
                 final String buyer_Address = buyerAddress.getText().toString().trim();
-                final String requested_Time = LocalDateTime.now().toString();
+                final String requested_Time = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
                 final String image_url = imageUrl;
                 final String payment_status = "pending";
+                final String item_id = id;
                 final String user_Id = currentUserId;
                 final String driver_Id = "not assigned";
                 final String prepared_Time = "not prepared";
@@ -135,8 +140,12 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
                                         newOrder.setDelivered_time(delivered_time);
                                         newOrder.setTotal_Price(Total_Price);
                                         newOrder.setOrder_Id(order_Id);
+                                        newOrder.setItemId(item_id);
+                                        newOrder.setItemDesc(description);
+                                        newOrder.setItemDiscount(discountOriginal);
                                         newOrder.setImage(image_url);
                                         newOrder.setItem_count(item_count);
+                                        newOrder.setPriceOriginal(priceOriginal);
                                         newOrder.setItem_name(itemName);
                                         newOrder.setDeliverCharge(deliver_charge);
 
@@ -219,6 +228,10 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
 
         imageUrl = buy_food_image;
         item_name = buy_food_title;
+
+        description = buy_food_desc;
+        discountOriginal = buy_food_discount;
+        priceOriginal = buy_food_price;
 
         buyTextTitle.setText(buy_food_title);
         buyTextDesc.setText(buy_food_desc);

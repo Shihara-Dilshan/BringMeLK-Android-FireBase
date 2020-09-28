@@ -138,6 +138,21 @@ public class SlideshowFragment extends Fragment {
 
                     }
                 });
+
+                button2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), BuyActivity.class);
+                        intent.putExtra("ITEM_ID", order.getItemId());
+                        intent.putExtra("ITEM_TITLE", order.getItem_name());
+                        intent.putExtra("ITEM_DESC", order.getItemDesc());
+                        intent.putExtra("ITEM_IMAGE", order.getImage());
+                        intent.putExtra("ITEM_PRICE", order.getPriceOriginal());
+                        intent.putExtra("ITEM_DISCOUNT", order.getItemDiscount());
+
+                        startActivity(intent);
+                    }
+                });
             }
 
         };

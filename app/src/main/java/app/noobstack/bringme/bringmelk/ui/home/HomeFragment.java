@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -34,10 +36,16 @@ import app.noobstack.bringme.bringmelk.BuyActivity;
 public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerViewCategory;
+    private RecyclerView recyclerViewFoodLatest;
+    private RecyclerView recyclerViewFoodPrice;
     private RecyclerView recyclerViewFood;
     private DatabaseReference CategoryDB;
     private DatabaseReference FoodDB;
     private FirebaseUser currentUser;
+    private Query queryLatest;
+    private Query queryPrice;
+
+    private ViewFlipper viewFlipper;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -47,6 +55,9 @@ public class HomeFragment extends Fragment {
 
         CategoryDB = FirebaseDatabase.getInstance().getReference().child("categories");
         FoodDB = FirebaseDatabase.getInstance().getReference().child("foods");
+        queryLatest = FirebaseDatabase.getInstance().getReference().child("foods").orderByChild("title");
+        queryPrice = FirebaseDatabase.getInstance().getReference().child("foods").orderByChild("price");
+
 
         recyclerViewCategory = root.findViewById(R.id.categoryRecycle);
 
@@ -65,9 +76,38 @@ public class HomeFragment extends Fragment {
         recyclerViewFood.setHasFixedSize(true);
         recyclerViewFood.setLayoutManager(linearLayoutManagerFood);
 
+        recyclerViewFoodLatest = root.findViewById(R.id.foodRecycleOrderBy);
+
+        LinearLayoutManager linearLayoutManagerLatest = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        linearLayoutManagerLatest.setReverseLayout(true);
+        linearLayoutManagerLatest.setStackFromEnd(true);
+        recyclerViewFoodLatest.setHasFixedSize(true);
+        recyclerViewFoodLatest.setLayoutManager(linearLayoutManagerLatest);
+
+        recyclerViewFoodPrice = root.findViewById(R.id.foodRecycleOrderByPrice);
+
+        LinearLayoutManager linearLayoutManagerPrice = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        linearLayoutManagerPrice.setReverseLayout(true);
+        linearLayoutManagerPrice.setStackFromEnd(true);
+        recyclerViewFoodPrice.setHasFixedSize(true);
+        recyclerViewFoodPrice.setLayoutManager(linearLayoutManagerPrice);
+
+
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         String currentUserId = currentUser.getUid().toString();
         System.out.println(currentUserId);
+
+        viewFlipper = root.findViewById(R.id.v_flipper);
+
+        int image[] = {R.drawable.imsgeslider1, R.drawable.imsgeslider2, R.drawable.imsgeslider3, R.drawable.imsgeslider4};
+
+        for(int i=0; i<image.length; i++){
+            flipperImage(image[i]);
+        }
+
+        for(int images: image){
+            flipperImage(images);
+        }
 
 
         if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3") || currentUserId.equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
@@ -75,6 +115,18 @@ public class HomeFragment extends Fragment {
         }
 
         return root;
+    }
+
+    public void flipperImage(int image){
+        ImageView imageView = new ImageView(getActivity());
+        imageView.setBackgroundResource(image);
+
+        viewFlipper.addView(imageView);
+        viewFlipper.setFlipInterval(4000);
+        viewFlipper.setAutoStart(true);
+
+        viewFlipper.setInAnimation(getActivity(), android.R.anim.slide_in_left);
+        viewFlipper.setOutAnimation(getActivity(), android.R.anim.slide_out_right);
     }
 
     @Override
@@ -128,6 +180,63 @@ public class HomeFragment extends Fragment {
         };
 
         recyclerViewFood.setAdapter(adapter2);
+
+
+        FirebaseRecyclerAdapter<Food,FoodViewHolder>adapter3=new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,R.layout.food_data, FoodViewHolder.class,queryLatest ) {
+            @Override
+            protected void populateViewHolder(FoodViewHolder foodViewHolder, final Food food, int i) {
+                foodViewHolder.setTitle(food.getTitle());
+                foodViewHolder.setDescription(food.getDescription());
+                foodViewHolder.setImage(food.getImage());
+                foodViewHolder.setPrice(food.getPrice());
+                foodViewHolder.setDiscount(food.getDiscount());
+
+                foodViewHolder.FoodView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), BuyActivity.class);
+                        intent.putExtra("ITEM_ID", food.getId());
+                        intent.putExtra("ITEM_TITLE", food.getTitle());
+                        intent.putExtra("ITEM_DESC", food.getDescription());
+                        intent.putExtra("ITEM_IMAGE", food.getImage());
+                        intent.putExtra("ITEM_PRICE", food.getPrice());
+                        intent.putExtra("ITEM_DISCOUNT", food.getDiscount());
+
+                        startActivity(intent);
+                    }
+                });
+            }
+        };
+
+        recyclerViewFoodLatest.setAdapter(adapter3);
+
+        FirebaseRecyclerAdapter<Food,FoodViewHolder>adapter4=new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,R.layout.food_data, FoodViewHolder.class,queryPrice ) {
+            @Override
+            protected void populateViewHolder(FoodViewHolder foodViewHolder, final Food food, int i) {
+                foodViewHolder.setTitle(food.getTitle());
+                foodViewHolder.setDescription(food.getDescription());
+                foodViewHolder.setImage(food.getImage());
+                foodViewHolder.setPrice(food.getPrice());
+                foodViewHolder.setDiscount(food.getDiscount());
+
+                foodViewHolder.FoodView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), BuyActivity.class);
+                        intent.putExtra("ITEM_ID", food.getId());
+                        intent.putExtra("ITEM_TITLE", food.getTitle());
+                        intent.putExtra("ITEM_DESC", food.getDescription());
+                        intent.putExtra("ITEM_IMAGE", food.getImage());
+                        intent.putExtra("ITEM_PRICE", food.getPrice());
+                        intent.putExtra("ITEM_DISCOUNT", food.getDiscount());
+
+                        startActivity(intent);
+                    }
+                });
+            }
+        };
+
+        recyclerViewFoodPrice.setAdapter(adapter4);
 
 
 

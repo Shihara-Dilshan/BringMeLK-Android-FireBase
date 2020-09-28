@@ -19,6 +19,15 @@
             android:background="#2E2D2D"
             android:orientation="vertical">
 
+            <ViewFlipper
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/v_flipper">
+
+
+
+            </ViewFlipper>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,6 +62,39 @@
                 android:background="#2E2D2D">
 
             </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latest Foods"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:layout_margin="5dp"
+                android:textAppearance="?android:textAppearanceLarge"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:id="@+id/foodRecycleOrderBy">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cheep Foods"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:layout_margin="5dp"
+                android:textAppearance="?android:textAppearanceLarge"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:id="@+id/foodRecycleOrderByPrice">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
 
             <TextView
                 android:layout_width="wrap_content"
