@@ -112,9 +112,35 @@ public class AdminDashboard extends AppCompatActivity {
     }
 
     public void adminLogout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(AdminDashboard.this, startPage.class);
-        startActivity(intent);
+        AlertDialog alertDialog = new AlertDialog.Builder(AdminDashboard.this)
+
+                .setIcon(android.R.drawable.ic_dialog_alert)
+
+                .setTitle("Log out?")
+
+                .setMessage("You will be logged out from the system")
+
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //set what would happen when positive button is clicked
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(AdminDashboard.this, startPage.class);
+                        startActivity(intent);
+
+                    }
+                })
+
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //set what should happen when negative button is clicked
+
+                    }
+                })
+                .show();
+
+
     }
 
     public void addFood(View view){
@@ -166,5 +192,13 @@ public class AdminDashboard extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+    public void openAddFood(View view){
+        startActivity(new Intent(AdminDashboard.this, AddNewFood.class));
+    }
+
+    public void manageFood(View view){
+        startActivity(new Intent(AdminDashboard.this, ManageFoodActivity.class));
     }
 }
