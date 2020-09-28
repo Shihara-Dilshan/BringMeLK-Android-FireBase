@@ -43,7 +43,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:text="By SLIIT"
+        android:text="App from SLIIT 2020 All Rights Reserved"
         android:textColor="#878787"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"

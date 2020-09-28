@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -43,6 +44,8 @@ public class HomeFragment extends Fragment {
     private FirebaseUser currentUser;
     private Query queryLatest;
     private Query queryPrice;
+
+    private ViewFlipper viewFlipper;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -94,12 +97,36 @@ public class HomeFragment extends Fragment {
         String currentUserId = currentUser.getUid().toString();
         System.out.println(currentUserId);
 
+        viewFlipper = root.findViewById(R.id.v_flipper);
+
+        int image[] = {R.drawable.imsgeslider1, R.drawable.imsgeslider2, R.drawable.imsgeslider3, R.drawable.imsgeslider4};
+
+        for(int i=0; i<image.length; i++){
+            flipperImage(image[i]);
+        }
+
+        for(int images: image){
+            flipperImage(images);
+        }
+
 
         if(currentUserId.equals("k3IEFP3100VtJeBD0K2hiUPOwzB3") || currentUserId.equals("ampSUboAV4U3fl5HwhrDZYamTJp1")){
             startActivity(new Intent(getActivity(), AdminDashboard.class));
         }
 
         return root;
+    }
+
+    public void flipperImage(int image){
+        ImageView imageView = new ImageView(getActivity());
+        imageView.setBackgroundResource(image);
+
+        viewFlipper.addView(imageView);
+        viewFlipper.setFlipInterval(4000);
+        viewFlipper.setAutoStart(true);
+
+        viewFlipper.setInAnimation(getActivity(), android.R.anim.slide_in_left);
+        viewFlipper.setOutAnimation(getActivity(), android.R.anim.slide_out_right);
     }
 
     @Override
