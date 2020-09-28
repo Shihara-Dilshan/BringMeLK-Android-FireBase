@@ -32,14 +32,35 @@
             android:paddingTop="5dp">
 
             <!-- Title, secondary and supporting text -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/food_title"
-                android:textColor="#ffffff"
-                android:textSize="15sp"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/food_title"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#424040"
+                    android:textColor="#4CAF50"
+                    android:textSize="8sp"
+                    android:drawableRight="@drawable/ic_baseline_folder_special_24"
+                    android:layout_weight="1"
+                    android:text="Add wish List"/>
+
+
+            </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -113,13 +113,9 @@ public class AdminDashboard extends AppCompatActivity {
 
     public void adminLogout(View view) {
         AlertDialog alertDialog = new AlertDialog.Builder(AdminDashboard.this)
-
                 .setIcon(android.R.drawable.ic_dialog_alert)
-
                 .setTitle("Log out?")
-
                 .setMessage("You will be logged out from the system")
-
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -127,7 +123,6 @@ public class AdminDashboard extends AppCompatActivity {
                         FirebaseAuth.getInstance().signOut();
                         Intent intent = new Intent(AdminDashboard.this, startPage.class);
                         startActivity(intent);
-
                     }
                 })
 
@@ -135,7 +130,6 @@ public class AdminDashboard extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //set what should happen when negative button is clicked
-
                     }
                 })
                 .show();
