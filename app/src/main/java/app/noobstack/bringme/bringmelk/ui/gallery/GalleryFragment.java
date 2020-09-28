@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,19 +19,39 @@ import app.noobstack.bringme.bringmelk.R;
 public class GalleryFragment extends Fragment {
 
     private GalleryViewModel galleryViewModel;
+    private ViewFlipper viewFlipper;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+        viewFlipper = root.findViewById(R.id.v_flipper2);
+
+        int image[] = {R.drawable.imsgeslider1, R.drawable.imsgeslider2, R.drawable.imsgeslider3, R.drawable.imsgeslider4};
+
+        for(int i=0; i<image.length; i++){
+            flipperImage(image[i]);
+        }
+
+        for(int images: image){
+            flipperImage(images);
+        }
+
+
         return root;
+    }
+
+
+    public void flipperImage(int image){
+        ImageView imageView = new ImageView(getActivity());
+        imageView.setBackgroundResource(image);
+
+        viewFlipper.addView(imageView);
+        viewFlipper.setFlipInterval(4000);
+        viewFlipper.setAutoStart(true);
+
+        viewFlipper.setInAnimation(getActivity(), android.R.anim.slide_in_left);
+        viewFlipper.setOutAnimation(getActivity(), android.R.anim.slide_out_right);
     }
 }

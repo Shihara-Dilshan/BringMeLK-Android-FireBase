@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="log out"
+        android:textColor="#F44336"
+        android:background="#FFFFFF"
         android:onClick="adminLogout"/>
 
     <ScrollView
@@ -22,15 +24,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="center"
-                android:text="Admin Dashboard" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,11 +54,11 @@
 
 
                         <Button
-
+                            android:onClick="openAddFood"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="46dp"
                             android:background="#2a2a2b"
-                            android:text="On going Deliveries in the system"
+                            android:text="Add Food "
                             android:textColor="#ffff" />
 
 
@@ -98,7 +91,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="#2a2a2b"
-                            android:text="Delivery Drivers in the system"
+                            android:text="Manage Food"
+                            android:onClick="manageFood"
                             android:textColor="#ffff" />
 
 
@@ -139,7 +133,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="#2a2a2b"
-                            android:text="Delivery Orders From customer"
+                            android:text="Completed Orders"
                             android:textColor="#ffff" />
 
 
@@ -174,7 +168,7 @@
                             android:layout_height="wrap_content"
                             android:background="#2a2a2b"
                             android:onClick="manageFood"
-                            android:text="manageFood"
+                            android:text="View Logs"
                             android:textColor="#ffff" />
 
 
@@ -207,13 +201,9 @@
                             android:layout_height="103dp"
                             android:scaleType="centerCrop"
                             app:srcCompat="@drawable/deliverv2"
-
                             />
 
-
                         <Button
-
-
                             android:id="@+id/btnManageCategories"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -229,19 +219,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp"></LinearLayout>
-
-            <Button
-                android:id="@+id/DriverLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#2a2a2b"
-                android:text="Driver Login"
-                android:textColor="#ffff" />
         </LinearLayout>
     </ScrollView>
 

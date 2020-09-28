@@ -7,18 +7,17 @@
     android:orientation="vertical"
     tools:context=".ui.slideshow.SlideshowFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="730dp"
+                android:layout_height="match_parent"
                 android:id="@+id/categoryRecycle">
 
             </androidx.recyclerview.widget.RecyclerView>
@@ -29,8 +28,6 @@
         </LinearLayout>
 
 
-
-    </ScrollView>
 
 
 </LinearLayout>
