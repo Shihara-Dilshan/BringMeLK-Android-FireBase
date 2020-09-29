@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#252626"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/DeliveryManage"
     tools:context=".ui.Admin.dashboardFragments.DeliverMangement">
 
@@ -33,11 +35,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#F44336"
-                    android:background="#FFFFFF"
+                    android:layout_marginRight="12dp"
+                    android:textColor="#fff"
+                    android:background="@drawable/carddesign"
                     android:onClick="adminLogout"
                     android:text="Log out"/>
-
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
             </LinearLayout>
 

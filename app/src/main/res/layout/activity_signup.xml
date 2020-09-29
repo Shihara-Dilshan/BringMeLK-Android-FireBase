@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity">
+    tools:context=".SignupActivity"
+    android:background="#FFFF"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,22 +18,22 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="108dp"
+                android:layout_height="141dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
                 android:contentDescription="@string/app_logo_desc"
-                android:src="@drawable/icons_shop" />
+                android:src="@drawable/foodshopicon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="0dp"
                 android:gravity="center"
                 android:text="BringMe.Lk"
                 android:textColor="#009688"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -44,10 +46,9 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signupemailField"
-                    android:inputType="textEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
+                    android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,10 +63,9 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editSignupTextTextPassword2"
-                    android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,10 +79,9 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextTextConfirmPassword2"
-                    android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

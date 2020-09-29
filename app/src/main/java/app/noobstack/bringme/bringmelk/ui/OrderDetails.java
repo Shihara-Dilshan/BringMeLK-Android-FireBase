@@ -9,13 +9,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
-
 import app.noobstack.bringme.bringmelk.AdminDashboard;
 import app.noobstack.bringme.bringmelk.R;
 import app.noobstack.bringme.bringmelk.model.CompletedOrders;
@@ -96,6 +94,7 @@ public class OrderDetails extends AppCompatActivity {
             public void onClick(View view) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("delivered_time","driver pickd up");
+                hashMap.put("prepared_Time","prepared");
                 orderdetailsDB.child(OrderId).updateChildren(hashMap);
             }
         });
@@ -119,16 +118,15 @@ public class OrderDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(distance.getText().toString().length()==0){
-                    distance.setText("0");
-                }
+                    distance.setText("0"); }
                 double Distance= Double.parseDouble(distance.getText().toString());
                 double chargers=50;
                 double DeliveryChargers= chargers*Distance;
                 Fcharge=String.valueOf(DeliveryChargers);
                 Dcalculation.setText("RS :"+Fcharge+"/=");
-               /* HashMap hashMap = new HashMap();
-                hashMap.put("delivery_chargers",Fcharge);
-                orderdetailsDB.child(OrderId).updateChildren(hashMap);*/
+                HashMap hashMap = new HashMap();
+                hashMap.put("deliverCharge",Fcharge);
+                orderdetailsDB.child(OrderId).updateChildren(hashMap);
             }
         });
         BtnOrderComplete.setOnClickListener(new View.OnClickListener() {

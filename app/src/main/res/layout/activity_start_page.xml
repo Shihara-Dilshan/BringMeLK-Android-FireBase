@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ffff"
     tools:context=".startPage">
 
     <ScrollView
@@ -17,12 +18,12 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="131dp"
+                android:layout_height="173dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
                 android:contentDescription="@string/app_logo_desc"
-                android:src="@drawable/icons_shop" />
+                android:src="@drawable/foodshopicon" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
                 android:gravity="center"
                 android:text="BringMe.Lk"
                 android:textColor="#009688"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"

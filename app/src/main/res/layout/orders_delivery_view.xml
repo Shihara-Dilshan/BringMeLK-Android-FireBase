@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#FFFF"
+        android:background="@drawable/cardd"
         >
 
         <LinearLayout
@@ -29,14 +29,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Delivery Address :"
+                    android:textColor="#00796B"
+                    android:text="DELIVERY ADDRESS :"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/OrderTitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="237dp"
                     android:layout_height="wrap_content"
+                    android:padding="15dp"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:textColor="#6e6d6b"
                     android:textSize="15sp" />
@@ -51,15 +53,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Customer Name :"
+                    android:text="CUSTOMER NAME :"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="#050505"
+                    android:textColor="#00796B"
                     android:textSize="15sp" />
+
                 <TextView
                     android:id="@+id/OrderDescription"
-                    android:layout_width="wrap_content"
+                    android:layout_width="241dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:padding="15dp"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="#6e6d6b"
                     android:textSize="15sp" />
@@ -74,17 +78,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Item Name :"
+                    android:text="ITEM NAME :"
 
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="#050505"
+                    android:textColor="#00796B"
                     android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/ItemName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="278dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:padding="15dp"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="#6e6d6b"
                     android:textSize="15sp" />
@@ -93,36 +98,53 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Quantity :"
+                    android:text="QUANTITY :"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="#050505"
+                    android:textColor="#00796B"
                     android:textSize="15sp" />
-
                 <TextView
                     android:id="@+id/Quantity_"
-                    android:layout_width="wrap_content"
+                    android:layout_width="295dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:padding="15dp"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="#6e6d6b"
                     android:textSize="15sp" />
             </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="1dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:text="Tap to More Details"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="#30ab6d"
-                android:textSize="18sp" />
+                android:background="@drawable/carddesign"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/vv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="43dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Tap to More Details"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+            </LinearLayout>
         </LinearLayout>
 
 

@@ -14,11 +14,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-
 import app.noobstack.bringme.bringmelk.R;
 import app.noobstack.bringme.bringmelk.model.Order;
 import app.noobstack.bringme.bringmelk.ui.GetOrder;
-
 public class DeliverMangement extends Fragment {
     private RecyclerView OrderList;
     private DatabaseReference OrdersDB;
@@ -57,8 +55,8 @@ public class DeliverMangement extends Fragment {
                         intent.putExtra("item_name",orders.getItem_name());
                         intent.putExtra("buyer_Mobile",orders.getBuyer_Mobile());
                         intent.putExtra("buyer_Name",orders.getBuyer_Name());
-                        intent.putExtra("Item_Price" ,orders.getTotal_Price());
-                        intent.putExtra("Quantity" ,orders.getItem_count());
+                        intent.putExtra("Item_Price",orders.getTotal_Price());
+                        intent.putExtra("Quantity",orders.getItem_count());
                         startActivity(intent);
                     }
                 });
