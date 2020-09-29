@@ -13,23 +13,25 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
+
         android:contentDescription="@string/app_logo_desc"
         android:src="@drawable/icons_shop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.449" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ProgressBar
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="BringMe.Lk"
-        android:textColor="#009688"
-        android:textSize="25sp"
+        android:focusable="false"
+        android:id="@+id/progressLoad"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -43,6 +45,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
         android:gravity="center"
+        android:focusable="false"
         android:text="App from SLIIT 2020 All Rights Reserved"
         android:textColor="#878787"
         android:textSize="10sp"
