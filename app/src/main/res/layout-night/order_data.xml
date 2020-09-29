@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2E2D2D"
+        android:background="#424040"
         android:orientation="vertical">
 
         <!-- Media -->
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="16dp"
-            android:background="#2E2D2D"
+            android:background="#424040"
             android:paddingRight="16dp"
             android:paddingTop="5dp">
 
@@ -37,7 +37,7 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp"
                 android:visibility="gone"
-                android:background="#2E2D2D"
+                android:background="#424040"
                 >
 
                 <TextView

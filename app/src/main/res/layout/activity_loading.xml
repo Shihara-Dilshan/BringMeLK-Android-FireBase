@@ -9,18 +9,18 @@
 
     <ImageView
         android:id="@+id/loadingLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="124dp"
+        android:layout_height="290dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
 
         android:contentDescription="@string/app_logo_desc"
-        android:src="@drawable/icons_shop"
+        android:focusable="false"
+        android:src="@drawable/foodshopicon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.449" />
 
