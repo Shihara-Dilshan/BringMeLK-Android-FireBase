@@ -1,4 +1,4 @@
-<img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif" hight="350px" width="180px"></img>
+<img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif" hight="400px" width="250px"></img>
 
 Food Ordering Abdroid App developed with Java and Firebase
 
