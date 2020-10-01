@@ -1,4 +1,4 @@
-Copyright (c) [Shihara Dilshan](https://github.com/Shihara-Dilshan) [Ruwin Wijesinghe](https://github.com/ruvinwijesinghe) [Umesha Ramanayake](https://github.com/umesha-D) [Mariyam Yumna](https://github.com/Maryam-Yumna)
+Copyright (c) Shihara Dilshan Ruwin Wijesinghe Umesha Ramanayake Mariyam Yumna
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
