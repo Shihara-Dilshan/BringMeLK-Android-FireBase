@@ -1,4 +1,4 @@
-<div>
+<div style="display: flex">
 	<div style="width:33%"><img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif" hight="400px" width="250px"></img></div> 
 	<div style="width:33%"><img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif" hight="400px" width="250px"></img></div> 
 	<div style="width:auto"><img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif" hight="400px" width="250px"></img></div> 
