@@ -1,8 +1,6 @@
-<div id="wrapper" style="display:-webkit-flex; -webkit-justify-content:center; display:flex; justify-content:center;">
-    <div id="c1" style="-webkit-flex:1; flex:1; border:thin solid #777;"><img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif"></div>
-    <div id="c2" style="-webkit-flex:1; flex:1; border:thin solid #777;"><img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif"></div>
-    <div id="c3" style="-webkit-flex:1; flex:1; border:thin solid #777;"><img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif"></div>
-</div> 
+<img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif" hight="400px" width="250px"></img>
+<img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif" hight="400px" width="250px"></img>
+<img alt="systemOverview" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/gifmaker_20201002012701.gif" hight="400px" width="250px"></img>
 
 Food Ordering Abdroid App developed with Java and Firebase
 
