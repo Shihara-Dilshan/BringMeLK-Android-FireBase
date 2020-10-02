@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBF7F7"
+    android:orientation="vertical"
+    tools:context=".AddNewFood">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_dark_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/add_food_item"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/addImgBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#FFFFFF"
+                app:srcCompat="@drawable/add_btn" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/item_name"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etitemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp"
+                android:ems="10"
+                android:hint="@string/enter_item_name_hint"
+                android:inputType="textPersonName"
+                android:textColor="@color/cardview_light_background"
+                android:textColorHint="@color/cardview_light_background"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/item_price"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp"
+                android:ems="10"
+                android:hint="@string/enter_item_price_hint"
+                android:inputType="numberDecimal"
+                android:textColor="@color/cardview_light_background"
+                android:textColorHint="@color/cardview_light_background"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/itemdiscount"
+                android:textColor="@color/cardview_light_background"
+                android:textColorHint="@color/cardview_light_background"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_Discount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp"
+                android:ems="10"
+                android:hint="@string/enterDiscountHint"
+                android:inputType="numberDecimal"
+                android:textColor="@color/cardview_light_background"
+                android:textColorHint="@color/cardview_light_background"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/item_description"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etitemdescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp"
+                android:ems="10"
+                android:hint="@string/enter_item_description_hint"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:overScrollMode="always"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                android:textColor="@color/cardview_light_background"
+                android:textColorHint="@color/cardview_light_background"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnSubmitNewItem"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/submitfood"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
