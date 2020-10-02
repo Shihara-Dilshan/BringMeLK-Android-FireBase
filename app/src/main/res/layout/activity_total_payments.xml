@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Total Payments"
+        android:text="Total Completed Orders"
         android:textColor="#009688"
         android:textSize="20sp" />
 
