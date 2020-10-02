@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -27,11 +29,14 @@ public class TotalPayments extends AppCompatActivity {
 
     private RecyclerView recyclerViewTPayments;
     private DatabaseReference CompletedOrdersDB;
+    private double totalPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_total_payments);
+
+        totalPrice = 0;
 
         recyclerViewTPayments = findViewById(R.id.TotalPaymentRecycle);
         CompletedOrdersDB = FirebaseDatabase.getInstance().getReference().child("completedOrders");
@@ -50,16 +55,35 @@ public class TotalPayments extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        totalPrice = 0;
+
         FirebaseRecyclerAdapter<CompletedOrders, TotalPayments.TotalOrdersViewHolder> adapter1 = new FirebaseRecyclerAdapter<CompletedOrders, TotalPayments.TotalOrdersViewHolder>(CompletedOrders.class, R.layout.completed_payments_data, TotalPayments.TotalOrdersViewHolder.class, CompletedOrdersDB) {
             @Override
             protected void populateViewHolder(TotalOrdersViewHolder totalOrdersViewHolder, CompletedOrders completedOrders, int i) {
                 totalOrdersViewHolder.setBuyerName(completedOrders.getBuyerName());
                 totalOrdersViewHolder.setItemName(completedOrders.getItemName());
                 totalOrdersViewHolder.setItemPrice(completedOrders.getItemPrice());
+                totalPrice += Double.parseDouble(completedOrders.getItemPrice());
             }
         };
 
         recyclerViewTPayments.setAdapter(adapter1);
+    }
+
+    public void calTotal(View view) {
+        if(totalPrice > 0){
+            Intent intent = new Intent(TotalPayments.this, ManageLogs.class);
+            intent.putExtra("TOTAL", Double.toString(totalPrice));
+            Toast.makeText(this, Double.toString(totalPrice), Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }else{
+            Toast.makeText(this, "There are no any completed orders", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void goback(View view) {
+        startActivity(new Intent(TotalPayments.this, AdminDashboard.class));
     }
 
     public static class TotalOrdersViewHolder extends RecyclerView.ViewHolder {

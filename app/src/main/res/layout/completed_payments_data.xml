@@ -100,10 +100,12 @@
                     android:layout_width="67dp"
                     android:layout_height="match_parent"
                     android:textColor="#F44336"
+                    android:visibility="invisible"
                     android:text="Tip Rs - "/>
 
                 <TextView
                     android:layout_width="67dp"
+                    android:visibility="invisible"
                     android:layout_height="match_parent"
                     android:id="@+id/completed_order_DTip" />
 

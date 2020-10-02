@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#424040"
     tools:context=".SignupActivity">
 
     <ScrollView
@@ -38,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:textColorHint="#ffffff"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
                 android:hint="email">
@@ -58,6 +60,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
+                android:textColorHint="#ffffff"
                 android:hint="password">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -75,6 +78,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
+                android:textColorHint="#ffffff"
                 android:hint="re-type password">
 
                 <com.google.android.material.textfield.TextInputEditText
