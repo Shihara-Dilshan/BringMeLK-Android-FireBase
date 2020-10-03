@@ -272,6 +272,7 @@
                 android:layout_height="wrap_content"
                 android:text="Complete your Order"
                 android:radius="5dp"
+                android:visibility="invisible"
                 android:id="@+id/BtnCompelete"
                 />
             <Button
