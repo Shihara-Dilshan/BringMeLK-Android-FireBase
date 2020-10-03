@@ -63,14 +63,15 @@ public class TotalPayments extends AppCompatActivity {
                 totalOrdersViewHolder.setBuyerName(completedOrders.getBuyerName());
                 totalOrdersViewHolder.setItemName(completedOrders.getItemName());
                 totalOrdersViewHolder.setItemPrice(completedOrders.getItemPrice());
-                totalPrice += Double.parseDouble(completedOrders.getItemPrice());
+                //totalPrice += Double.parseDouble(completedOrders.getItemPrice());
+                calTotal(Double.parseDouble(completedOrders.getItemPrice()));
             }
         };
 
         recyclerViewTPayments.setAdapter(adapter1);
     }
 
-    public void calTotal(View view) {
+    public void calTotals(View view) {
         if(totalPrice > 0){
             Intent intent = new Intent(TotalPayments.this, ManageLogs.class);
             intent.putExtra("TOTAL", Double.toString(totalPrice));
@@ -109,5 +110,10 @@ public class TotalPayments extends AppCompatActivity {
             TextView BuyerItemPrice = myview.findViewById(R.id.completed_order_Tprice);
             BuyerItemPrice.setText(IPrice);
         }
+    }
+
+    public Double calTotal(Double input){
+        totalPrice += input;
+        return  totalPrice;
     }
 }
