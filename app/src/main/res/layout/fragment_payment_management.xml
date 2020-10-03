@@ -103,6 +103,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="#ffffff"
                             android:background="#00BCD4"
+                            android:onClick="viewLogs"
                             android:text="View Logs" />
 
 

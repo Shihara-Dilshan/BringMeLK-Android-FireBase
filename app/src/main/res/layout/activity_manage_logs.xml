@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TotalPayments">
+    android:layout_height="match_parent"
+    tools:context=".ManageLogs">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Total Completed Orders"
+        android:text="Current Revanue"
         android:textColor="#009688"
         android:textSize="20sp" />
 
@@ -25,34 +25,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
+            android:onClick="addToLog"
             android:background="#00BCD4"
-            android:text="calculate the Total"
+            android:text="Add to log then clear"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
-            android:onClick="calTotals"
             android:layout_weight="1"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:layout_marginStart="5dp"
-            android:textColor="#FFFFFF"
-            android:onClick="goback"
-            android:background="#00BCD4"
-            android:text="Go back"
-            android:layout_weight="1"/>
 
 
 
 
 
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/TotalPaymentRecycle">
 
-    </androidx.recyclerview.widget.RecyclerView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Today Total Income is "
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:textSize="20sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/totalTag"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="45sp"
+        android:textColor="#009688"
+        android:gravity="center"/>
+
 
 </LinearLayout>

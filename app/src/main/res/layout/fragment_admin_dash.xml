@@ -46,9 +46,9 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="103dp"
+                            android:layout_height="wrap_content"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/deli"
+                            app:srcCompat="@drawable/add_food"
 
                             />
 
@@ -81,9 +81,9 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="103dp"
+                            android:layout_height="wrap_content"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/pngtree" />
+                            app:srcCompat="@drawable/manage_food" />
 
 
                         <Button
@@ -123,9 +123,9 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="103dp"
+                            android:layout_height="wrap_content"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/deli" />
+                            app:srcCompat="@drawable/completed_o" />
 
 
                         <Button
@@ -133,6 +133,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="#2a2a2b"
+                            android:onClick="completedOrders"
                             android:text="Completed Orders"
                             android:textColor="#ffff" />
 
@@ -156,9 +157,9 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="103dp"
+                            android:layout_height="wrap_content"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/deli" />
+                            app:srcCompat="@drawable/view_logs" />
 
 
                         <Button
@@ -167,7 +168,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="#2a2a2b"
-                            android:onClick="manageFood"
+                            android:onClick="viewLogss"
                             android:text="View Logs"
                             android:textColor="#ffff" />
 
@@ -179,45 +180,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="103dp"
-                            android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/deliverv2"
-                            />
-
-                        <Button
-                            android:id="@+id/btnManageCategories"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#2a2a2b"
-                            android:text="manageCategories"
-                            android:textColor="#ffff" />
-
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

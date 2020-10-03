@@ -241,7 +241,7 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
         discount = Double.parseDouble(buy_food_discount);
         oneUnitPrice = Double.parseDouble(buy_food_price);
 
-        total = oneUnitPrice - (oneUnitPrice * discount / 100.0);
+        total = BuyTotal(oneUnitPrice, discount);
 
         String initialTotalTag = "TOTAL PRICE " + total;
         totalPriceTag.setText(initialTotalTag);
@@ -260,5 +260,12 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
         });
 
 
+
     }
+
+    public static double BuyTotal(double oneUnitPrice,double discount){
+        double TOTAL_PRICE = oneUnitPrice - (oneUnitPrice * discount / 100.0);
+        return TOTAL_PRICE;
+    }
+
 }

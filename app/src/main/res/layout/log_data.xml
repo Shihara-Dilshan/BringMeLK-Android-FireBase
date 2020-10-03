@@ -31,7 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Buyers Name"
+                    android:text="Date"
                     android:textSize="15sp"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="#706F6F"
-                    android:id="@+id/completed_order_bName"
+                    android:id="@+id/log_date"
                     android:textSize="15sp"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Item Name"
+                    android:text="Total Income"
                     android:textSize="15sp"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="#706F6F"
-                    android:id="@+id/completed_order_itemName"
+                    android:id="@+id/total_income"
                     android:textSize="15sp"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
@@ -78,39 +78,6 @@
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:layout_width="67dp"
-                    android:layout_height="match_parent"
-                    android:textColor="#F44336"
-                    android:text="Price Rs - "/>
-
-                <TextView
-                    android:layout_width="67dp"
-                    android:layout_height="match_parent"
-                    android:textColor="#F44336"
-                    android:id="@+id/completed_order_Tprice" />
-
-                <TextView
-                    android:layout_width="67dp"
-                    android:layout_height="match_parent"
-                    android:textColor="#F44336"
-                    android:visibility="invisible"
-                    android:text="Tip Rs - "/>
-
-                <TextView
-                    android:layout_width="67dp"
-                    android:visibility="invisible"
-                    android:layout_height="match_parent"
-                    android:id="@+id/completed_order_DTip" />
-
-
-            </LinearLayout>
 
         </LinearLayout>
 
