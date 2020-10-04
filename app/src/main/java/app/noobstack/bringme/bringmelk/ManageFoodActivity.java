@@ -66,6 +66,8 @@ public class ManageFoodActivity extends AppCompatActivity {
                 final String itemkey = itemref.getKey();
 
 
+
+
                 foodItemViewHolder.deleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
