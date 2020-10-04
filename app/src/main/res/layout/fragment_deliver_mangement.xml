@@ -8,9 +8,7 @@
     android:id="@+id/DeliveryManage"
     tools:context=".ui.Admin.dashboardFragments.DeliverMangement">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,5 +51,5 @@
                 android:layout_width="match_parent"
                 android:layout_height="650dp"></androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
-    </ScrollView>
+
 </LinearLayout>
