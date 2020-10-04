@@ -58,4 +58,40 @@ public class BuyActivityTest {
         assertNotNull(BuyActivity.generateUUIDString());
     }
 
+    @Test
+    public void testStringEmpty(){
+        String input = "value";
+        boolean expectedResult = false;
+        boolean output = BuyActivity.checkEmptyString(input);
+
+        assertEquals(expectedResult, output);
+    }
+
+    @Test
+    public void testStringEmptyTest2(){
+        String input = "";
+        boolean expectedResult = true;
+        boolean output = BuyActivity.checkEmptyString(input);
+
+        assertEquals(expectedResult, output);
+    }
+
+    @Test
+    public void testMobileValidation(){
+        String input = "0750935556";
+        boolean expectedResult = true;
+        boolean output = BuyActivity.mobileValidator(input);
+
+        assertEquals(expectedResult, output);
+    }
+
+    @Test
+    public void testMobileValidation2(){
+        String input = "0750gjj556";
+        boolean expectedResult = false;
+        boolean output = BuyActivity.mobileValidator(input);
+
+        assertEquals(expectedResult, output);
+    }
+
 }
