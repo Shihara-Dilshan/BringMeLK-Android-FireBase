@@ -32,11 +32,13 @@
         <activity android:name=".AdminDashboard" />
         <activity android:name=".AdminLogin" />
         <activity android:name=".EditFoodItemActivity" />
-        <activity android:name=".ManageFoodActivity" />
+        <activity android:name=".ManageFoodActivity"
+            android:parentActivityName=".AdminDashboard"></activity>
         <activity android:name=".AddNewFood" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" />
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".startPage"
             android:windowSoftInputMode="stateVisible|adjustPan" />

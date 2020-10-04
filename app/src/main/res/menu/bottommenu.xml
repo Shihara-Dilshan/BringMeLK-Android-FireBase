@@ -12,12 +12,12 @@
         app:showAsAction="always" />
 
     <item android:id="@+id/Order_ico"
-        android:title="Orders"
+        android:title="Foods"
         android:icon="@drawable/ic_order"
         app:showAsAction="always" />
 
     <item android:id="@+id/Profile_ico"
-        android:title="Profile"
+        android:title="Stats"
         android:icon="@drawable/ic_profile"
         app:showAsAction="always" />
 </menu>

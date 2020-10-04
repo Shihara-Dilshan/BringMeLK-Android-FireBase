@@ -4,41 +4,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#252626"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/DeliveryManage"
     tools:context=".ui.Admin.dashboardFragments.DeliverMangement">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:layout_weight="0.5"
+            android:textColor="#009688"
+            android:text="Pending Delivery"
+            android:textAppearance="?android:textAppearanceLarge" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="12dp"
+            android:textColor="#fff"
+            android:background="@drawable/carddesign"
+            android:onClick="adminLogout"
+            android:text="Log out"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="10dp"
-                    android:layout_weight="0.5"
-                    android:textColor="#009688"
-                    android:text="Pending Delivery"
-                    android:textAppearance="?android:textAppearanceLarge" />
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginRight="12dp"
-                    android:textColor="#fff"
-                    android:background="@drawable/carddesign"
-                    android:onClick="adminLogout"
-                    android:text="Log out"/>
-            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,5 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="650dp"></androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
