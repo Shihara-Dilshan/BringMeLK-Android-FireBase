@@ -89,4 +89,8 @@ public class MainActivity extends AppCompatActivity {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://wwww.facebook.com"));
         startActivity(browserIntent);
     }
+
+    public static boolean httpsChecker(String URL_INPUT){
+        return URL_INPUT.startsWith("https://") || URL_INPUT.startsWith("http://");
+    }
 }

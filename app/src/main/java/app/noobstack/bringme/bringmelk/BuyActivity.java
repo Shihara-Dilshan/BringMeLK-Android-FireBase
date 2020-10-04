@@ -268,4 +268,8 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
         return TOTAL_PRICE;
     }
 
+    public static String generateUUIDString(){
+        return UUID.randomUUID().toString();
+    }
+
 }
