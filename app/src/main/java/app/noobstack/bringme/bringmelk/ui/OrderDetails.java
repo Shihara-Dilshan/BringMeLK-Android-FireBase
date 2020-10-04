@@ -49,34 +49,35 @@ public class OrderDetails extends AppCompatActivity {
     private static String Fcharge;
     private FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
     private String currentUserId = currentUser.getUid();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_details);
         orderdetailsDB = FirebaseDatabase.getInstance().getReference().child("orders");
-        CompleteOrder=FirebaseDatabase.getInstance().getReference().child("completedOrders");
-        button1=findViewById(R.id.radio_button_1);
-        button2=findViewById(R.id.radio_button_2);
-        button3=findViewById(R.id.radio_button_3);
-        button4=findViewById(R.id.radio_button_4);
-        BtnRemoveDriver=findViewById(R.id.RemoveDriver);
-        distance=findViewById(R.id.Distance);
-        calculate=findViewById(R.id.Calculate);
-        BtnOrderComplete=findViewById(R.id.BtnCompelete);
-        buyer__Name =findViewById(R.id.Cusname);
-        buyer__Address=findViewById(R.id.Address);
-        item__name=findViewById(R.id.Itemname);
-        buyer__Mobile=findViewById(R.id.Cusphn);
-        Quantity=findViewById(R.id.Quantity);
-        Item__Price=findViewById(R.id.Itemprice);
-        Dcalculation=findViewById(R.id.calculation);
+        CompleteOrder = FirebaseDatabase.getInstance().getReference().child("completedOrders");
+        button1 = findViewById(R.id.radio_button_1);
+        button2 = findViewById(R.id.radio_button_2);
+        button3 = findViewById(R.id.radio_button_3);
+        button4 = findViewById(R.id.radio_button_4);
+        BtnRemoveDriver = findViewById(R.id.RemoveDriver);
+        distance = findViewById(R.id.Distance);
+        calculate = findViewById(R.id.Calculate);
+        BtnOrderComplete = findViewById(R.id.BtnCompelete);
+        buyer__Name = findViewById(R.id.Cusname);
+        buyer__Address = findViewById(R.id.Address);
+        item__name = findViewById(R.id.Itemname);
+        buyer__Mobile = findViewById(R.id.Cusphn);
+        Quantity = findViewById(R.id.Quantity);
+        Item__Price = findViewById(R.id.Itemprice);
+        Dcalculation = findViewById(R.id.calculation);
         Intent intent = getIntent();
-        buyerAddress=intent.getStringExtra("buyerAddress").toString();
-        buyerName=intent.getStringExtra("buyerName").toString();
-        mobile=intent.getStringExtra("buyerMobile").toString();
-        quantity=intent.getStringExtra("quantity").toString();
-        itemprice=intent.getStringExtra("ItemPrice").toString();
-        itemname=intent.getStringExtra("itemname").toString();
+        buyerAddress = intent.getStringExtra("buyerAddress").toString();
+        buyerName = intent.getStringExtra("buyerName").toString();
+        mobile = intent.getStringExtra("buyerMobile").toString();
+        quantity = intent.getStringExtra("quantity").toString();
+        itemprice = intent.getStringExtra("ItemPrice").toString();
+        itemname = intent.getStringExtra("itemname").toString();
         OrderId = intent.getStringExtra("orderId").toString();
         buyer__Name.setText(buyerName);
         buyer__Address.setText(buyerAddress);
@@ -88,7 +89,7 @@ public class OrderDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 HashMap hashMap = new HashMap();
-                hashMap.put("delivered_time","Food is making");
+                hashMap.put("delivered_time", "Food is making");
                 orderdetailsDB.child(OrderId).updateChildren(hashMap);
             }
         });
@@ -96,8 +97,8 @@ public class OrderDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 HashMap hashMap = new HashMap();
-                hashMap.put("delivered_time","driver pickd up");
-                hashMap.put("prepared_Time","prepared");
+                hashMap.put("delivered_time", "driver pickd up");
+                hashMap.put("prepared_Time", "prepared");
                 orderdetailsDB.child(OrderId).updateChildren(hashMap);
             }
         });
@@ -105,7 +106,7 @@ public class OrderDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 HashMap hashMap = new HashMap();
-                hashMap.put("delivered_time","On the location");
+                hashMap.put("delivered_time", "On the location");
                 orderdetailsDB.child(OrderId).updateChildren(hashMap);
             }
         });
@@ -114,7 +115,7 @@ public class OrderDetails extends AppCompatActivity {
             public void onClick(View view) {
                 BtnOrderComplete.setVisibility(View.VISIBLE);
                 HashMap hashMap = new HashMap();
-                hashMap.put("delivered_time","Delivered");
+                hashMap.put("delivered_time", "Delivered");
                 orderdetailsDB.child(OrderId).updateChildren(hashMap);
             }
         });
@@ -124,12 +125,14 @@ public class OrderDetails extends AppCompatActivity {
                 BtnRemoveDriver.setVisibility(View.INVISIBLE);
                 String VDistance = distance.getText().toString();
                 Boolean ValidDistance = checkNumbers(VDistance);
-                Boolean CheackZero=checkifZero(VDistance);
+                Boolean CheackLenZero = checkLength(VDistance);
+                Boolean CheckLen=checkValueZero(VDistance);
                 if (ValidDistance == FALSE) {
                     Toast.makeText(OrderDetails.this, "Please enter Valid Distance", Toast.LENGTH_SHORT).show();
-                }
-                else if(CheackZero==TRUE){
+                } else if (CheackLenZero == TRUE) {
                     Toast.makeText(OrderDetails.this, "Please enter Distance", Toast.LENGTH_SHORT).show();
+                } else if(CheckLen==TRUE){
+                    Toast.makeText(OrderDetails.this, "Please enter distance grater than zero ", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     if (distance.getText().toString().length() == 0) {
@@ -150,8 +153,8 @@ public class OrderDetails extends AppCompatActivity {
             public void onClick(View view) {
                 addCompleteOrder();
                 HashMap hashMap = new HashMap();
-                hashMap.put("delivered_time","delivered");
-                hashMap.put("payment_status","paid");
+                hashMap.put("delivered_time", "delivered");
+                hashMap.put("payment_status", "paid");
                 orderdetailsDB.child(OrderId).updateChildren(hashMap);
                 startActivity(new Intent(OrderDetails.this, AdminDashboard.class));
             }
@@ -160,42 +163,55 @@ public class OrderDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 HashMap hashMap = new HashMap();
-                hashMap.put("delivered_time","not delivered");
-                hashMap.put("driver_Id","not Assigned");
+                hashMap.put("delivered_time", "not delivered");
+                hashMap.put("driver_Id", "not Assigned");
                 orderdetailsDB.child(OrderId).updateChildren(hashMap);
                 Toast.makeText(OrderDetails.this, "You removed from the order", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(OrderDetails.this, AdminDashboard.class));
             }
         });
     }
+
     public static double calculateDcharge(double Distance) {
-        double chargers=50;
-        double DeliveryChargers= chargers*Distance;
+        double chargers = 50;
+        double DeliveryChargers = chargers * Distance;
         return DeliveryChargers;
     }
-    public void addCompleteOrder(){
-            String id = CompleteOrder.push().getKey();
-            CompletedOrders completedOrders= new CompletedOrders(buyerAddress,Fcharge,itemname,itemprice,mobile,quantity,buyerName,currentUserId);
-            CompleteOrder.child(id).setValue(completedOrders);
-            Toast.makeText(this, "Order Completed", Toast.LENGTH_SHORT).show();
+
+    public void addCompleteOrder() {
+        String id = CompleteOrder.push().getKey();
+        CompletedOrders completedOrders = new CompletedOrders(buyerAddress, Fcharge, itemname, itemprice, mobile, quantity, buyerName, currentUserId);
+        CompleteOrder.child(id).setValue(completedOrders);
+        Toast.makeText(this, "Order Completed", Toast.LENGTH_SHORT).show();
     }
-    public static Boolean checkNumbers(String VVDistance){
-        for (char i:VVDistance.toCharArray()){
-            if(i=='1'||i=='1'||i=='2'||i=='3'||i=='4'||i=='5'||i=='6'||i=='7'||i=='8'||i=='9'||i=='.'){
+
+    public static Boolean checkNumbers(String VVDistance) {
+        for (char i : VVDistance.toCharArray()) {
+            if (i == '0' || i == '1' || i == '2' || i == '3' || i == '4' || i == '5' || i == '6' || i == '7' || i == '8' || i == '9' || i == '.') {
                 //System.out.println("Valid");
-            }else{
+            } else {
                 return FALSE;
             }
         }
         return TRUE;
     }
-    public static Boolean checkifZero(String Zdistance){
-        char[] zdistance=Zdistance.toCharArray();
-        if(zdistance.length==0){
+    public static Boolean checkLength(String Zdistance) {
+        char[] zdistance = Zdistance.toCharArray();
+        if (zdistance.length == 0) {
             return TRUE;
+        } else {
+            return FALSE;
         }
-        else{
-        return FALSE;
+    }
+    public static Boolean checkValueZero(String ZDistance) {
+        for (char i : ZDistance.toCharArray()) {
+            if (i == '0') {
+                //System.out.println("Valid");
+            } else {
+                return FALSE;
+            }
+
         }
+        return TRUE;
     }
 }
