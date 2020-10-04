@@ -215,6 +215,8 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
         decrementBtn.setOnClickListener(this);
         confirmBtn.setOnClickListener(this);
 
+        boolean as = mobileValidator("07555555");
+
         Intent intent = getIntent();
 
         OrderDB = FirebaseDatabase.getInstance().getReference().child("orders");
@@ -270,6 +272,33 @@ public class BuyActivity extends AppCompatActivity implements View.OnClickListen
 
     public static String generateUUIDString(){
         return UUID.randomUUID().toString();
+    }
+
+    public static boolean checkEmptyString(String input){
+        return input.equals("");
+    }
+
+    public static boolean mobileValidator(String input){
+        if(input.length() == 10 && input.startsWith("0")){
+            for(char charValue: input.toCharArray()){
+                if(charValue == '0'
+                  ||charValue == '1'
+                  ||charValue == '2'
+                  ||charValue == '3'
+                  ||charValue == '4'
+                  ||charValue == '5'
+                  ||charValue == '6'
+                  ||charValue == '7'
+                  ||charValue == '8'
+                  ||charValue == '9'){
+
+                }else{
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
     }
 
 }
