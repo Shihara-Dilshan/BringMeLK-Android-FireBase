@@ -18,8 +18,11 @@ import app.noobstack.bringme.bringmelk.AdminDashboard;
 import app.noobstack.bringme.bringmelk.R;
 import app.noobstack.bringme.bringmelk.model.CompletedOrders;
 
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
+
 public class OrderDetails extends AppCompatActivity {
-    private String OrderId;
+    private static String OrderId;
     private String buyerName;
     private String buyerAddress;
     private String mobile;
@@ -32,18 +35,18 @@ public class OrderDetails extends AppCompatActivity {
     private TextView buyer__Name;
     private TextView Quantity;
     private TextView Item__Price;
-    private TextView Dcalculation;
+    private static TextView Dcalculation;
     private RadioButton button1;
     private RadioButton button2;
     private RadioButton button3;
     private RadioButton button4;
-    private DatabaseReference orderdetailsDB;
+    private static DatabaseReference orderdetailsDB;
     private DatabaseReference CompleteOrder;
     private EditText distance;
     private Button calculate;
     private Button BtnOrderComplete;
     private Button BtnRemoveDriver;
-    private String Fcharge;
+    private static String Fcharge;
     private FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
     private String currentUserId = currentUser.getUid();
     @Override
@@ -119,21 +122,27 @@ public class OrderDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 BtnRemoveDriver.setVisibility(View.INVISIBLE);
-                String VDistance=distance.getText().toString();
-                for (char i:VDistance.toCharArray()){
-                    if(i=='1'||i=='1'||i=='2'||i=='3'||i=='4'||i=='5'||i=='6'||i=='7'||i=='8'||i=='9'||i=='.'){
-                        //Toast.makeText(OrderDetails.this, "valid distance", Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(OrderDetails.this, "Please enter Valid Distance", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+                String VDistance = distance.getText().toString();
+                Boolean ValidDistance = checkNumbers(VDistance);
+                Boolean CheackZero=checkifZero(VDistance);
+                if (ValidDistance == FALSE) {
+                    Toast.makeText(OrderDetails.this, "Please enter Valid Distance", Toast.LENGTH_SHORT).show();
                 }
-                if(distance.getText().toString().length()==0){
-                    Toast.makeText(OrderDetails.this, "Please enter distance", Toast.LENGTH_SHORT).show();
-                     }
-
-                double Distance= Double.parseDouble(distance.getText().toString());
-                calculateDcharge(Distance);
+                else if(CheackZero==TRUE){
+                    Toast.makeText(OrderDetails.this, "Please enter Distance", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (distance.getText().toString().length() == 0) {
+                        Toast.makeText(OrderDetails.this, "Please enter distance", Toast.LENGTH_SHORT).show();
+                    }
+                    double Distance = Double.parseDouble(distance.getText().toString());
+                    double fchargeINT = calculateDcharge(Distance);
+                    String fchargeStr = String.valueOf(fchargeINT);
+                    Dcalculation.setText("RS :" + fchargeStr + "/=");
+                    HashMap hashMap = new HashMap();
+                    hashMap.put("deliverCharge", fchargeStr);
+                    orderdetailsDB.child(OrderId).updateChildren(hashMap);
+                }
             }
         });
         BtnOrderComplete.setOnClickListener(new View.OnClickListener() {
@@ -159,14 +168,9 @@ public class OrderDetails extends AppCompatActivity {
             }
         });
     }
-    private double calculateDcharge(double Distance) {
+    public static double calculateDcharge(double Distance) {
         double chargers=50;
         double DeliveryChargers= chargers*Distance;
-        Fcharge=String.valueOf(DeliveryChargers);
-        Dcalculation.setText("RS :"+Fcharge+"/=");
-        HashMap hashMap = new HashMap();
-        hashMap.put("deliverCharge",Fcharge);
-        orderdetailsDB.child(OrderId).updateChildren(hashMap);
         return DeliveryChargers;
     }
     public void addCompleteOrder(){
@@ -174,5 +178,24 @@ public class OrderDetails extends AppCompatActivity {
             CompletedOrders completedOrders= new CompletedOrders(buyerAddress,Fcharge,itemname,itemprice,mobile,quantity,buyerName,currentUserId);
             CompleteOrder.child(id).setValue(completedOrders);
             Toast.makeText(this, "Order Completed", Toast.LENGTH_SHORT).show();
+    }
+    public static Boolean checkNumbers(String VVDistance){
+        for (char i:VVDistance.toCharArray()){
+            if(i=='1'||i=='1'||i=='2'||i=='3'||i=='4'||i=='5'||i=='6'||i=='7'||i=='8'||i=='9'||i=='.'){
+                //System.out.println("Valid");
+            }else{
+                return FALSE;
+            }
+        }
+        return TRUE;
+    }
+    public static Boolean checkifZero(String Zdistance){
+        char[] zdistance=Zdistance.toCharArray();
+        if(zdistance.length==0){
+            return TRUE;
+        }
+        else{
+        return FALSE;
+        }
     }
 }
