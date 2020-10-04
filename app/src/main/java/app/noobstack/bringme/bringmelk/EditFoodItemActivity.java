@@ -97,18 +97,21 @@ public class EditFoodItemActivity extends AppCompatActivity {
                             }
                             else {
 
-                                if (Float.parseFloat(itemDiscount.getText().toString()) > 100 || Float.parseFloat(itemDiscount.getText().toString()) < 0) {
+                                if (!isValidDiscount(Float.parseFloat(itemDiscount.getText().toString()))) {
                                     Toast.makeText(EditFoodItemActivity.this, "Please Enter a Discount between 0 and 100", Toast.LENGTH_SHORT).show();
+                                }
+                                else if(!isValidPrice(Float.parseFloat(itemprice.getText().toString()))){
+                                    Toast.makeText(EditFoodItemActivity.this, "Please Enter a price greater than 0", Toast.LENGTH_SHORT).show();
                                 }
                                 else {
 
-                                    if(!discount.equals(itemDiscount.getText().toString())){
+                                    if(isValueChanged(discount, itemDiscount.getText().toString())){
                                         dbref.child("discount").setValue(itemDiscount.getText().toString());
                                     }
-                                    if (!description.equals(itemDescription.getText().toString())){
+                                    if (isValueChanged(description, itemDescription.getText().toString())){
                                         dbref.child("description").setValue(itemDescription.getText().toString());
                                     }
-                                    if (!price.equals(itemprice.getText().toString())){
+                                    if (isValueChanged(price,itemprice.getText().toString())){
                                         dbref.child("price").setValue(itemprice.getText().toString());
                                     }
                                     Intent i = new Intent(EditFoodItemActivity.this, ManageFoodActivity.class);
@@ -137,4 +140,25 @@ public class EditFoodItemActivity extends AppCompatActivity {
 
 
     }
+    public boolean isValidDiscount(float discount){
+
+        if(discount>=0 & discount <=100)
+            return true;
+        else
+            return false;
+
+    }
+    public boolean isValidPrice(float price){
+        if(price<0)
+            return false;
+        else
+            return true;
+    }
+    public boolean isValueChanged(String oldValue,String newValue){
+        if(oldValue.equals(newValue))
+            return false;
+        else
+            return true;
+    }
+
 }
