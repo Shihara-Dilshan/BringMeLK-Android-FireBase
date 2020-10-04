@@ -20,7 +20,7 @@ public class AddNewFoodTest {
 
 
     @Before
-    public  static void createObject(){
+    public void createObject(){
         newFood = new AddNewFood();
     }
 
@@ -53,7 +53,7 @@ public class AddNewFoodTest {
     }
 
     @After
-    public static void deleteObject(){
+    public void deleteObject(){
         newFood = null;
     }
 

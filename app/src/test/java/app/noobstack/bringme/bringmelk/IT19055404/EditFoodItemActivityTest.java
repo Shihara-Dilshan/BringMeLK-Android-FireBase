@@ -20,7 +20,7 @@ public class EditFoodItemActivityTest {
 
 
     @Before
-    public  static void createObject(){
+    public void createObject(){
         food = new EditFoodItemActivity();
     }
 
@@ -64,7 +64,7 @@ public class EditFoodItemActivityTest {
     }
 
     @After
-    public static void deleteObject(){
+    public void deleteObject(){
         food = null;
     }
 
