@@ -75,4 +75,13 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
+
+    public static boolean validate(String input){
+        return !input.equals("");
+    }
+
+
+    public static boolean validateEmail(String input){
+        return input.endsWith(".com");
+    }
 }
