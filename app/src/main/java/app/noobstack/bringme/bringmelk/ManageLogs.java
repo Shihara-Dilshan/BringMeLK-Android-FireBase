@@ -75,4 +75,13 @@ public class ManageLogs extends AppCompatActivity {
 
 
     }
+
+    public static String createDate(){
+        String date = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+        return date;
+    }
+
+    public static String generateUUID(){
+        return UUID.randomUUID().toString();
+    }
 }

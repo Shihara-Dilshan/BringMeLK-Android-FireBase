@@ -116,4 +116,13 @@ public class TotalPayments extends AppCompatActivity {
         totalPrice += input;
         return  totalPrice;
     }
+
+
+    public static Double convertTODouble(String input){
+        return Double.parseDouble(input);
+    }
+
+    public static String  convertTOString(Double input){
+        return Double.toString(input);
+    }
 }
