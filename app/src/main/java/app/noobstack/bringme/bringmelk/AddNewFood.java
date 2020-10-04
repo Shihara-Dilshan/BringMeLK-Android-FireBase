@@ -99,12 +99,15 @@ public class AddNewFood extends AppCompatActivity {
             Toast.makeText(AddNewFood.this, "Please Enter a Price", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(newFood.getDiscount())) {
-            Toast.makeText(AddNewFood.this, "Please Enter Discount", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddNewFood.this, "Please Enter Discount, if no discount enter 0 ", Toast.LENGTH_SHORT).show();
         }
         else {
 
-            if (Float.parseFloat(newFood.getDiscount()) > 100 || Float.parseFloat(newFood.getDiscount()) < 0) {
+            if (!isValidDiscount(Float.parseFloat(newFood.getDiscount()))) {
                 Toast.makeText(AddNewFood.this, "Please Enter a Discount between 0 and 100", Toast.LENGTH_SHORT).show();
+            }
+            else if(!isValidPrice(Float.parseFloat(newFood.getPrice()))){
+                Toast.makeText(AddNewFood.this, "Please Enter a price greater than 0", Toast.LENGTH_SHORT).show();
             }
 
         else{
@@ -158,4 +161,20 @@ public class AddNewFood extends AppCompatActivity {
 
         }
     }
+    public boolean isValidDiscount(float discount){
+
+        if(discount>=0 & discount <=100)
+            return true;
+        else
+            return false;
+
+    }
+    public boolean isValidPrice(float price){
+        if(price<0)
+            return false;
+        else
+            return true;
+    }
+
+
 }
