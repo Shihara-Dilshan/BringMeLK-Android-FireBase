@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="app.noobstack.bringme.bringmelk">
+    package="app.noobstack.bringme.bringmelk" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,9 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/icons_shop"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ManageLogs"></activity>
-        <activity android:name=".LoadingActivity">
+        android:theme="@style/AppTheme" >
+        <activity android:name=".LogEditActivity" >
+        </activity>
+        <activity android:name=".ManageLogs" />
+        <activity android:name=".LoadingActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,7 +39,7 @@
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".startPage"
-            android:windowSoftInputMode="stateVisible|adjustPan"></activity>
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

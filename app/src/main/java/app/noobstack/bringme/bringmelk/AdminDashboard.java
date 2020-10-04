@@ -151,7 +151,7 @@ public class AdminDashboard extends AppCompatActivity {
     }
 
     public void viewLogs(View view) {
-        startActivity(new Intent(AdminDashboard.this, TotalPayments.class));
+        startActivity(new Intent(AdminDashboard.this, LogEditActivity.class));
     }
 
     public void checkDriver(){
@@ -198,5 +198,13 @@ public class AdminDashboard extends AppCompatActivity {
 
     public void manageFood(View view){
         startActivity(new Intent(AdminDashboard.this, ManageFoodActivity.class));
+    }
+
+    public void completedOrders(View view) {
+        startActivity(new Intent(AdminDashboard.this, TotalPayments.class));
+    }
+
+    public void viewLogss(View view){
+        startActivity(new Intent(AdminDashboard.this, LogEditActivity.class));
     }
 }

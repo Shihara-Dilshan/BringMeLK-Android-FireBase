@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Total Payments"
+        android:text="Total Completed Orders"
         android:textColor="#009688"
         android:textSize="20sp" />
 
@@ -29,7 +29,7 @@
             android:text="calculate the Total"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
-            android:onClick="calTotal"
+            android:onClick="calTotals"
             android:layout_weight="1"/>
 
         <Button
